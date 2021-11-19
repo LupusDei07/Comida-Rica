@@ -46,7 +46,7 @@ public class Server {
                 ObjectInputStream flujoEntrada = new ObjectInputStream(auxEntrada);
 
                 Peticion peticionRecibida = (Peticion) flujoEntrada.readObject();
-                System.out.println("peticion recibida" + peticionRecibida);
+                System.out.println("peticion recibida: " + peticionRecibida);
 
                 // transfiere la petición a la logica de aplicación y esta le devuelve la respuesta en la misma peticion
                 peticionRecibida = accesoApp.procesarPeticion(peticionRecibida);
@@ -55,6 +55,7 @@ public class Server {
                 flujoSalida.writeObject(peticionRecibida);
 
                 // desconecta la comunicacion con el cliente
+                System.out.println("peticion recibida: " + peticionRecibida);
                 skCliente.close();
                 System.out.println("Desconectando al cliente " + numCli);
 
