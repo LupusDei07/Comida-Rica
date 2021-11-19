@@ -5,20 +5,28 @@
  */
 package Vista;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Usuario
  */
-public class InterfazPrincipal extends javax.swing.JFrame {
-
+public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
+    Ingresar ingresar= new Ingresar();
+    CostoExpress costo= new CostoExpress();
+    
     /**
      * Creates new form InterfazProncipal
      */
     public InterfazPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        jMenuItem1.addActionListener(this);
+        ingresar.setVisible(false);
+        costo.setVisible(false);
+        
     }
 
     /**
@@ -29,6 +37,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         labelfondo = new javax.swing.JLabel();
+        contenedor = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JUsuario = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -51,10 +60,12 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
-        getContentPane().add(labelfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 620));
+        getContentPane().add(labelfondo, java.awt.BorderLayout.CENTER);
+
+        contenedor.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(contenedor, java.awt.BorderLayout.PAGE_START);
 
         JUsuario.setText("Usuario");
 
@@ -152,6 +163,11 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         jMenu4.add(jMenu1);
 
         jMenuItem9.setText("Costo Express");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem9);
 
         jMenuBar1.add(jMenu4);
@@ -163,6 +179,14 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        
+        if (ingresar.isShowing()){
+        ingresar.setVisible(false);
+        }else{
+            contenedor.add(ingresar);
+            ingresar.setVisible(true);
+            
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -182,7 +206,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         
-        JOptionPane.showMessageDialog(rootPane, "Programa creado por: \n Samuel Artavia \n Ericka Yu Min \n David Anchoy \n\n\n Universidad tecnologico de Costa Rica \n II Semestre 2021");
+        JOptionPane.showMessageDialog(rootPane, "Programa creado por: \n Samuel Artavia \n Ericka Yu Min \n David Anchoy \n\n\n Universidad tecnologica de Costa Rica \n II Semestre 2021");
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -196,6 +220,19 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        
+        if (costo.isShowing()){
+        costo.setVisible(false);
+        }else{
+            contenedor.add(costo);
+            costo.setVisible(true);
+            
+        }
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,6 +272,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JUsuario;
+    private javax.swing.JPanel contenedor;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -255,4 +293,9 @@ public class InterfazPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel labelfondo;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
 }
