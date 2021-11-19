@@ -18,6 +18,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     CostoExpress costo= new CostoExpress();
     EditarMenu editMenu= new EditarMenu();
     Menu menu= new Menu();
+    PedidosActuales pActuales =new PedidosActuales();
     
     MenosPedido mPedido= new MenosPedido();
     TipoPedido tPedido= new TipoPedido();
@@ -25,7 +26,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     
     
     
-    static boolean isAdmin= false;
+    boolean isAdmin= true;
     
     /**
      * Creates new form InterfazProncipal
@@ -40,7 +41,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenuItem11.addActionListener(this);
         jMenuItem12.addActionListener(this);
         jMenuItem6.addActionListener(this);
-        
+        jMenuItem8.addActionListener(this);
         
         ingresar.setVisible(false);
         costo.setVisible(false);
@@ -49,6 +50,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         tPedido.setVisible(false); 
         t10.setVisible(false); 
         menu.setVisible(false);
+        pActuales.setVisible(false);
     }
 
     /**
@@ -200,6 +202,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenu1.add(jMenu5);
 
         jMenuItem8.setText("Pedidos Actuales");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem8);
 
         jMenu4.add(jMenu1);
@@ -233,13 +240,14 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+        
         if(isAdmin==false){
-            JOptionPane.showMessageDialog(rootPane, "Actualmente se ecuentra como Cliente. ");
+            JOptionPane.showMessageDialog(rootPane, "Actualmente se encuentra como Cliente. ");
         
         }else{
         
-        JOptionPane.showMessageDialog(rootPane, "Se ha finalizado la sesion");                           //falta el cerrar la sesión pero eso es con el srvr 
-        isAdmin=true;
+        JOptionPane.showMessageDialog(rootPane, "Actualmente se encuentra como Administrador");                          
+        
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -257,7 +265,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         
-        JOptionPane.showMessageDialog(rootPane, "Programa creado por: \n Samuel Artavia \n Ericka Yu Min \n David Anchoy \n\n\n Universidad tecnologica de Costa Rica \n II Semestre 2021");
+        JOptionPane.showMessageDialog(rootPane, "Programa creado por: \n Samuel Artavia \n Ericka Yu Min \n David Achoy \n\n\n Universidad tecnologica de Costa Rica \n II Semestre 2021");
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -362,6 +370,18 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenuItem3.setEnabled(true);
         }
     }//GEN-LAST:event_jMenuItem3MouseEntered
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        if (pActuales.isShowing()){
+        pActuales.setVisible(false);
+        }else{
+            contenedor.add(pActuales);
+            pActuales.setVisible(true);
+            
+        }      
+        
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
