@@ -18,7 +18,7 @@ public class ControladorServidor {
 
     public ControladorServidor() {
     }
-    
+    //INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
     public Peticion procesarPeticion(Peticion peticionRecibida) {
         switch (peticionRecibida.getAccion()){
             case INGRESAR: 
@@ -29,19 +29,32 @@ public class ControladorServidor {
                 break;
                 
             case VER_PRODUCTOS:
-                break;
-                
+                break; 
             case MODIFICAR_PRODUCTO:
                 break;
-            
             case AGREGAR_CARRITO:
-                break;
-                
+                break;         
             case AGREGAR_PRODUCTO:
-                break;
-                
+                break;          
             case CERRAR_SESION:
+                break;        
+            case TOP_10:
                 break;
+            case MENOS_PEDIDOS:
+                break;
+            case TIPOS_PEDIDOS:
+                break;
+            case REALIZAR_PEDIDO:
+                break;
+            case VER_PEDIDOS:
+                break;
+            case CERRAR_PESTANA:
+                break;
+          
+            
+                
+                
+                
             /*
             case SALUDAR: 
                 peticionRecibida.setDatosSalida("Saludos cliente " + peticionRecibida.getDatosEntrada() + " desde el servidor!");
