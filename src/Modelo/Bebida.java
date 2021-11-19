@@ -62,6 +62,14 @@ public class Bebida extends Productos{
         return imagen;
     }
 
+    public int getCantVecesPedida() {
+        return cantVecesPedida;
+    }
+
+    public void setCantVecesPedida(int cantVecesPedida) {
+        this.cantVecesPedida = cantVecesPedida;
+    }
+
     @Override
     public void cantidadLiquido(int cantidad) {
         this.cantidadLiquido=cantidad;
@@ -98,7 +106,8 @@ public class Bebida extends Productos{
 
     @Override
     public String toString() {
-        return "Bebida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" cantidadLiquido=" + cantidadLiquido + '}';
+        return "Bebida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" cantidadLiquido=" + cantidadLiquido + 
+                " cantidad veces pedido="+super.getCantVecesPedida()+'}';
     }
 
     @Override
@@ -110,4 +119,5 @@ public class Bebida extends Productos{
     public double getCantidadLiquido() {
         return this.cantidadLiquido;
     }
+    
 }

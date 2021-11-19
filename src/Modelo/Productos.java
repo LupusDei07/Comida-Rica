@@ -12,11 +12,12 @@ import java.util.Objects;
  *
  * @author yumii
  */
-public abstract class Productos implements IRacion, ICantidad, Serializable{
+public abstract class Productos implements IRacion, ICantidad, Serializable,Comparable<Productos>{
     protected String nombre;
     protected double costo;
     protected double caloria;
     protected String imagen;
+    protected int cantVecesPedida;
     
     public Productos(){
     }
@@ -48,17 +49,33 @@ public abstract class Productos implements IRacion, ICantidad, Serializable{
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-    
-    
+
+    public int getCantVecesPedida() {
+        return cantVecesPedida;
+    }
+
+    public void setCantVecesPedida(int cantVecesPedida) {
+        this.cantVecesPedida = cantVecesPedida;
+    }
     
     public abstract void setNombre(String nombre);
     
+    @Override
+    public int compareTo(Productos producto) {
+        if(producto.getCantVecesPedida()<this.cantVecesPedida){
+            return -1;
+        }
+        else if(producto.getCantVecesPedida()<this.cantVecesPedida){
+            return 0;
+        }
+        return 1;
+    }
     
     @Override
     public String toString() {
-        return "Productos{" + "nombre=" + nombre + ", costo=" + costo + ", caloria=" + caloria + '}';
+        return "Productos{" + "nombre=" + nombre + ", costo=" + costo + ", caloria=" + caloria + ", imagen=" + imagen + ", cantVecesPedida=" + cantVecesPedida + '}';
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 5;

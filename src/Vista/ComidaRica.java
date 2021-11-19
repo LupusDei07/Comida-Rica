@@ -11,6 +11,7 @@ import Modelo.Comida;
 import Modelo.Productos;
 import Servidor.Server;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -24,27 +25,31 @@ public class ComidaRica {
     public static void main(String[] args) {
         // TODO code application logic here
         
-//        GestorProductos gestor=new GestorProductos();
-//        Productos producto;
-//        producto = new Comida();
-//        producto.setNombre("hola");
-//        //System.out.println(producto.toString());
+        GestorProductos gestor=new GestorProductos();
+        Productos producto;
+        producto = new Comida();
+        producto.setNombre("hola");
+        producto.setCantVecesPedida(10);
+        //System.out.println(producto.toString());
+        
+        Productos pruebaCompare=new Bebida();
+        Productos pruebaCompare2=new Comida("hola",2,3,23,"xhao");
+        pruebaCompare2.setCantVecesPedida(3);
+        
+        gestor.agregarProducto(producto);
+        gestor.agregarProducto(pruebaCompare);
+        gestor.agregarProducto(pruebaCompare2);
+        //System.out.println(gestor.obtenerLista().toString());
+        
+        GestorProductos gestor2=new GestorProductos();
+        producto = new Comida();
+        producto.setNombre("hola2");
+        producto.setCantVecesPedida(22);
+        gestor2.agregarProducto(producto);
 //        
-//        Productos pruebaCompare=new Bebida();
-//        Productos pruebaCompare2=new Comida("hola",2,3,23,"xhao");
-//        
-//        gestor.agregarProducto(producto);
-//        gestor.agregarProducto(pruebaCompare);
-//        gestor.agregarProducto(pruebaCompare2);
-//        //System.out.println(gestor.obtenerLista().toString());
-//        
-//        GestorProductos gestor2=new GestorProductos();
-//        producto = new Comida();
-//        producto.setNombre("hola2");
-//        gestor2.agregarProducto(producto);
-//        
-//        ArrayList<Productos> prueba=gestor2.obtenerLista();
-//        prueba.addAll(gestor.obtenerLista());
+        ArrayList<Productos> prueba= new ArrayList<>();
+        prueba.addAll(gestor2.obtenerLista());
+        prueba.addAll(gestor.obtenerLista());
 //       // System.out.println(prueba);
 //        
 //        gestor2.agregarListaProductos(gestor.obtenerLista());
@@ -68,9 +73,15 @@ public class ComidaRica {
         //Ubicacion del archivo a guardar
         //Arraylist productos
         //gestor2.guardarArchivo(gestor2.obtenerLista());
-        GestorProductos gestor2=new GestorProductos();
-        gestor2.leerArchivo();
-        System.out.println(gestor2.obtenerLista());
+        //GestorProductos gestor2=new GestorProductos();
+        //gestor2.leerArchivo();
+        //System.out.println(gestor2.obtenerLista());
+           //System.out.println(prueba);
+           
+           ArrayList<Productos> productos=new ArrayList<Productos>();
+           System.out.println(gestor.obtenerLista());
+           Collections.sort(prueba);
+           System.out.println(gestor.obtenerListaOrdenada());
         
         
     }

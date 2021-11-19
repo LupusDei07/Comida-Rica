@@ -63,6 +63,14 @@ public class Comida extends Productos{
     public String getImagen() {
         return imagen;
     }
+    
+    public int getCantVecesPedida() {
+        return cantVecesPedida;
+    }
+
+    public void setCantVecesPedida(int cantVecesPedida) {
+        this.cantVecesPedida = cantVecesPedida;
+    }
 
     @Override
     public void racion(double racion) {
@@ -76,7 +84,8 @@ public class Comida extends Productos{
 
     @Override
     public String toString() {
-        return "Comida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" racion=" + racion + '}';
+        return "Comida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" racion=" + racion +" cantidad veces pedido="+
+                super.getCantVecesPedida()+'}';
     }
 
     @Override
@@ -88,4 +97,6 @@ public class Comida extends Productos{
     public double getCantidadLiquido() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 }

@@ -22,6 +22,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -103,7 +104,12 @@ public class GestorProductos {
         return producto;
     }
     
-    
+    public ArrayList<Productos> obtenerListaOrdenada(){
+        ArrayList<Productos> listaOrdenada=this.listaProductos;
+        Collections.sort(listaOrdenada);
+        return listaOrdenada;
+    }
+     
     public void leerArchivo(){
         File archivo=new File("C:Archivos//ProductosBD.dat");
         ArrayList<Productos> lista=new ArrayList<Productos>();
@@ -135,6 +141,7 @@ public class GestorProductos {
             e.printStackTrace();
         }
     }
+
 }
         
         
