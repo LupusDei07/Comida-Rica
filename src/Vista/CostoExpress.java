@@ -36,7 +36,7 @@ public class CostoExpress extends javax.swing.JPanel {
         setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ventana costo Express");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -47,7 +47,7 @@ public class CostoExpress extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 2, 0, 238);
         add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Costo Actual:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -69,7 +69,7 @@ public class CostoExpress extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(46, 7, 0, 0);
         add(jTextField1, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nuevo Costo: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -96,7 +96,7 @@ public class CostoExpress extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 7, 0, 0);
         add(jTextField2, gridBagConstraints);
 
-        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jButton1.setText("Guardar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

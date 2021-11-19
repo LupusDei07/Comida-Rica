@@ -36,7 +36,7 @@ public class Ingresar extends javax.swing.JPanel {
         setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("                                                 Ventana Ingresar");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -47,7 +47,7 @@ public class Ingresar extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -60,7 +60,7 @@ public class Ingresar extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(68, 50, 0, 0);
         add(jLabel2, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Contrasena");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -70,7 +70,7 @@ public class Ingresar extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 40, 0, 0);
         add(jLabel3, gridBagConstraints);
 
-        jButton1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jButton1.setText("Ingresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

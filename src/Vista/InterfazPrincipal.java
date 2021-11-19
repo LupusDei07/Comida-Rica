@@ -16,6 +16,16 @@ import javax.swing.JOptionPane;
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
     Ingresar ingresar= new Ingresar();
     CostoExpress costo= new CostoExpress();
+    EditarMenu editMenu= new EditarMenu();
+    Menu menu= new Menu();
+    
+    MenosPedido mPedido= new MenosPedido();
+    TipoPedido tPedido= new TipoPedido();
+    Top10 t10=new Top10();
+    
+    
+    
+    static boolean isAdmin= false;
     
     /**
      * Creates new form InterfazProncipal
@@ -24,9 +34,21 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         initComponents();
         this.setLocationRelativeTo(null);
         jMenuItem1.addActionListener(this);
+        jMenuItem9.addActionListener(this);
+        jMenuItem7.addActionListener(this);
+        jMenuItem10.addActionListener(this);
+        jMenuItem11.addActionListener(this);
+        jMenuItem12.addActionListener(this);
+        jMenuItem6.addActionListener(this);
+        
+        
         ingresar.setVisible(false);
         costo.setVisible(false);
-        
+        editMenu.setVisible(false);   
+        mPedido.setVisible(false); 
+        tPedido.setVisible(false); 
+        t10.setVisible(false); 
+        menu.setVisible(false);
     }
 
     /**
@@ -86,6 +108,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         JUsuario.add(jMenuItem2);
 
         jMenuItem3.setText("Cerrar Sesion");
+        jMenuItem3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenuItem3MouseEntered(evt);
+            }
+        });
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -128,6 +155,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Admin");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenu4MouseEntered(evt);
+            }
+        });
 
         jMenuItem7.setText("Inventario");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +174,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenu5.setText("Estadisticas");
 
         jMenuItem10.setText("Top 10");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem10);
 
         jMenuItem11.setText("Tipo Pedido");
@@ -153,6 +190,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenu5.add(jMenuItem11);
 
         jMenuItem12.setText("Menos Pedido");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem12);
 
         jMenu1.add(jMenu5);
@@ -191,10 +233,19 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+        if(isAdmin==false){
+            JOptionPane.showMessageDialog(rootPane, "Actualmente se ecuentra como Cliente. ");
+        
+        }else{
+        
+        JOptionPane.showMessageDialog(rootPane, "Se ha finalizado la sesion");                           //falta el cerrar la sesión pero eso es con el srvr 
+        isAdmin=true;
+        }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+   
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -211,14 +262,43 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
+        if (menu.isShowing()){
+        menu.setVisible(false);
+        }else{
+            contenedor.add(menu);
+            menu.setVisible(true);
+            
+        }
+        
+        
+        
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
+        if (editMenu.isShowing()){
+        editMenu.setVisible(false);
+        }else{
+            contenedor.add(editMenu);
+            editMenu.setVisible(true);
+            
+        }        
+        
+        
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
+        if (tPedido.isShowing()){
+        tPedido.setVisible(false);
+        }else{
+            contenedor.add(tPedido);
+            tPedido.setVisible(true);
+            
+        }  
+        
+        
+        
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
@@ -233,6 +313,55 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         }
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+       if (t10.isShowing()){
+        t10.setVisible(false);
+        }else{
+            contenedor.add(t10);
+            t10.setVisible(true);
+            
+        } 
+        
+        
+        
+        
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        if (mPedido.isShowing()){
+        mPedido.setVisible(false);
+        }else{
+            contenedor.add(mPedido);
+            mPedido.setVisible(true);
+            
+        } 
+        
+        
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenu4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseEntered
+        // TODO add your handling code here:
+        if(isAdmin==false){
+        jMenu4.setEnabled(false);
+        
+        }else{
+        jMenu4.setEnabled(true);
+        }
+    }//GEN-LAST:event_jMenu4MouseEntered
+
+    private void jMenuItem3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem3MouseEntered
+        // TODO add your handling code here:
+        
+        if(isAdmin==false){
+        jMenuItem3.setEnabled(false);
+        
+        }else{
+        jMenuItem3.setEnabled(true);
+        }
+    }//GEN-LAST:event_jMenuItem3MouseEntered
 
     /**
      * @param args the command line arguments
