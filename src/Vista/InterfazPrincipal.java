@@ -8,22 +8,63 @@ package Vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Usuario
  */
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
-    Ingresar ingresar= new Ingresar();
-    CostoExpress costo= new CostoExpress();
-    EditarMenu editMenu= new EditarMenu();
-    Menu menu= new Menu();
-    PedidosActuales pActuales =new PedidosActuales();
+    static Ingresar ingresar= new Ingresar();
+    static CostoExpress costo= new CostoExpress();
+    static EditarMenu editMenu= new EditarMenu();
+    static Bebida bebida= new Bebida();
+    static Comida comida= new Comida();
+    static Menu menu= new Menu();
+    static Carrito carrito=new Carrito();
+    static PedidosActuales pActuales =new PedidosActuales();
     
     MenosPedido mPedido= new MenosPedido();
     TipoPedido tPedido= new TipoPedido();
     Top10 t10=new Top10();
     
+
+    static void runBebida() {
+        menu.setVisible(false);
+        if (bebida.isShowing()){
+        bebida.setVisible(false);
+        }else{
+            contenedor.add(bebida);
+            bebida.setVisible(true);
+            
+        }
+        
+    }
+
+    static void runComida() {
+        
+        menu.setVisible(false);
+        if (comida.isShowing()){
+        comida.setVisible(false);
+        }else{
+            contenedor.add(comida);
+            comida.setVisible(true);
+            
+        }
+    }
+
+    static void runCarrito() {
+        menu.setVisible(false);
+        if (carrito.isShowing()){
+        carrito.setVisible(false);
+        }else{
+            contenedor.add(carrito);
+            carrito.setVisible(true);
+            
+        }
+    }
+    
+
     
     
     boolean isAdmin= true;
@@ -51,6 +92,10 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         t10.setVisible(false); 
         menu.setVisible(false);
         pActuales.setVisible(false);
+        bebida.setVisible(false);
+        comida.setVisible(false);
+        carrito.setVisible(false);
+        
     }
 
     /**
@@ -225,7 +270,10 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    
 
+    
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         
@@ -272,13 +320,15 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         // TODO add your handling code here:
         if (menu.isShowing()){
         menu.setVisible(false);
+        carrito.setVisible(false);
+        bebida.setVisible(false);
+        comida.setVisible(false);
         }else{
             contenedor.add(menu);
             menu.setVisible(true);
             
         }
-        
-        
+           
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -421,7 +471,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JUsuario;
-    private javax.swing.JPanel contenedor;
+    public static javax.swing.JPanel contenedor;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
