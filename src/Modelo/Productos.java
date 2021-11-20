@@ -21,6 +21,7 @@ public abstract class Productos implements IRacion, ICantidad, Serializable,Comp
     
     public Productos(){
     }
+    
 
     public String getNombre() {
         return nombre;
