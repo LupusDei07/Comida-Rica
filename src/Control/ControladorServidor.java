@@ -6,6 +6,8 @@
 package Control;
 
 import Modelo.Administrador;
+import Modelo.Bebida;
+import Modelo.Comida;
 import Modelo.Peticion;
 
 /**
@@ -15,10 +17,12 @@ import Modelo.Peticion;
 public class ControladorServidor {
     
     private Administrador admUsr = new Administrador();
+    private GestorProductos listaProductos = new GestorProductos();
 
     public ControladorServidor() {
     }
     //INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
+    //VER_BEBIDA,VER_COMIDAS
     public Peticion procesarPeticion(Peticion peticionRecibida) {
         switch (peticionRecibida.getAccion()){
             case INGRESAR: 
@@ -27,15 +31,31 @@ public class ControladorServidor {
                  boolean admOK = admUsr.validarAdm(partes[0], partes[1]);
                  peticionRecibida.setDatosSalida(admOK);
                 break;
-                
             case VER_PRODUCTOS:
+                peticionRecibida.setDatosSalida(listaProductos.obtenerLista());
                 break; 
             case MODIFICAR_PRODUCTO:
                 break;
             case AGREGAR_CARRITO:
                 break;         
-            case AGREGAR_PRODUCTO:
-                break;          
+            case AGREGAR_PRODUCTO_BEBIDA:
+                //Bebida
+                 String partesBebida = (String) peticionRecibida.getDatosEntrada();
+                 String [] splitBebidas  = partesBebida.split("-"); 
+                 Bebida newBebida = new Bebida();
+                 listaProductos.agregarProducto(newBebida);
+                 
+                       
+                break;
+            case AGREGAR_PRODUCTO_COMIDA:
+                //comida
+                 String partesComida = (String) peticionRecibida.getDatosEntrada();
+                 String [] splitComida   = partesComida.split("-"); 
+                 Comida newComida = new Comida();
+                 listaProductos.agregarProducto(newComida);
+                 
+                       
+                break; 
             case CERRAR_SESION:
                 break;        
             case TOP_10:
@@ -49,6 +69,12 @@ public class ControladorServidor {
             case VER_PEDIDOS:
                 break;
             case CERRAR_PESTANA:
+                break;
+            case VER_COMIDAS:
+                peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("Comida"));
+                break;
+            case VER_BEBIDA:
+                peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("bebidas"));
                 break;
           
             
