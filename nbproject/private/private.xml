@@ -8,6 +8,7 @@
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/ICantidad.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/FormaDeRecibido.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Control/GestorProductos.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Comida.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Cliente.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/ComidaRica.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Comida.java</file>
@@ -25,10 +26,12 @@
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/EditarMenu.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Top10.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Servidor/Server.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/TipoPedido.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/MenosPedido.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Ingresar.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/InterfazPrincipal.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Servidor/MainServer.java</file>
         </group>
     </open-files>
 </project-private>
