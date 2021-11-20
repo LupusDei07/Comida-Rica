@@ -22,6 +22,10 @@ public class GestorPedidos {
     public void agregar(Pedido pedido){
         listaPedidos.add(pedido);
     }
+
+    public ArrayList<Pedido> getListaPedidos() {
+        return listaPedidos;
+    }
     
     public void modificar(int cantidad, String nombreProducto ){
         for(int contador=0;contador<listaPedidos.size();contador++){

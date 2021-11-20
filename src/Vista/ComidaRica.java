@@ -5,9 +5,11 @@
  */
 package Vista;
 
+import Control.GestorPedidos;
 import Control.GestorProductos;
 import Modelo.Bebida;
 import Modelo.Comida;
+import Modelo.Pedido;
 import Modelo.Productos;
 import Servidor.Server;
 import java.util.ArrayList;
@@ -24,32 +26,32 @@ public class ComidaRica {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        GestorProductos gestor=new GestorProductos();
-        Productos producto;
-        producto = new Comida();
-        producto.setNombre("hola");
-        producto.setCantVecesPedida(10);
-        //System.out.println(producto.toString());
-        
-        Productos pruebaCompare=new Bebida();
-        Productos pruebaCompare2=new Comida("hola",2,3,23,"xhao");
-        pruebaCompare2.setCantVecesPedida(3);
-        
-        gestor.agregarProducto(producto);
-        gestor.agregarProducto(pruebaCompare);
-        gestor.agregarProducto(pruebaCompare2);
-        //System.out.println(gestor.obtenerLista().toString());
-        
-        GestorProductos gestor2=new GestorProductos();
-        producto = new Comida();
-        producto.setNombre("hola2");
-        producto.setCantVecesPedida(22);
-        gestor2.agregarProducto(producto);
 //        
-        ArrayList<Productos> prueba= new ArrayList<>();
-        prueba.addAll(gestor2.obtenerLista());
-        prueba.addAll(gestor.obtenerLista());
+//        GestorProductos gestor=new GestorProductos();
+//        Productos producto;
+//        producto = new Comida();
+//        producto.setNombre("hola");
+//        producto.setCantVecesPedida(10);
+//        //System.out.println(producto.toString());
+//        
+//        Productos pruebaCompare=new Bebida();
+//        Productos pruebaCompare2=new Comida("hola",2,3,23,"xhao");
+//        pruebaCompare2.setCantVecesPedida(3);
+//        
+//        gestor.agregarProducto(producto);
+//        gestor.agregarProducto(pruebaCompare);
+//        gestor.agregarProducto(pruebaCompare2);
+//        //System.out.println(gestor.obtenerLista().toString());
+//        
+//        GestorProductos gestor2=new GestorProductos();
+//        producto = new Comida();
+//        producto.setNombre("hola2");
+//        producto.setCantVecesPedida(22);
+//        gestor2.agregarProducto(producto);
+////        
+//        ArrayList<Productos> prueba= new ArrayList<>();
+//        prueba.addAll(gestor2.obtenerLista());
+//        prueba.addAll(gestor.obtenerLista());
 //       // System.out.println(prueba);
 //        
 //        gestor2.agregarListaProductos(gestor.obtenerLista());
@@ -77,12 +79,18 @@ public class ComidaRica {
         //gestor2.leerArchivo();
         //System.out.println(gestor2.obtenerLista());
            //System.out.println(prueba);
-           
+           /*
            ArrayList<Productos> productos=new ArrayList<Productos>();
            System.out.println(gestor.obtenerLista());
            Collections.sort(prueba);
            System.out.println(gestor.obtenerListaOrdenada());
-        
+        */
+        GestorPedidos gestor = new GestorPedidos();
+        Pedido pedido=new Pedido(12, 120, "Pepsi", Modelo.TipoPedido.EXPRESS);
+        gestor.agregar(pedido);
+        System.out.println(gestor.getListaPedidos());
+        gestor.modificar(2, "Pepsi");
+        System.out.println(gestor.getListaPedidos());
         
     }
 
