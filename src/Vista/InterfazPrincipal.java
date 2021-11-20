@@ -5,8 +5,10 @@
  */
 package Vista;
 
+import Modelo.Pedido;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -68,7 +70,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     
     
     boolean isAdmin= true;
-    
+    ArrayList<Pedido> listaPedidos=new ArrayList<Pedido>();
     /**
      * Creates new form InterfazProncipal
      */
