@@ -16,7 +16,7 @@ import java.net.*;
  *
  * @author yumii
  */
-public class Cliente {
+public class Client {
 
     private Peticion nuevaPeticion;
 
@@ -32,7 +32,7 @@ public class Cliente {
         return nuevaPeticion.getDatosSalida();
     }
 
-    public Cliente() {
+    public Client() {
 
         try {
             // establezco comunicacion con el servidor
@@ -60,7 +60,7 @@ public class Cliente {
         }
     }
 
-    public Cliente(Peticion laPeticion) {
+    public Client(Peticion laPeticion) {
 
         nuevaPeticion = laPeticion;
         try {

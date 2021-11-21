@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import Modelo.Client;
+import Modelo.Peticion;
+import Modelo.TipoAccion;
+
 /**
  *
  * @author Usuario
@@ -98,6 +102,12 @@ public class Ingresar extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(68, 0, 0, 0);
         add(jTextField1, gridBagConstraints);
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 4;
@@ -114,7 +124,37 @@ public class Ingresar extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
+        //Hay que validar de que jTextField2 ingrese datos o da error el server
+        String elUsr= jTextField1.getText();
+        String elPwd= jTextField2.getText();
+        
+        // se crea una peticion de tipo INGRESAR que devolverá un boolean como respuesta.
+        // esto por definición de los servicios provistos por la aplicación servidora
+        
+        Peticion peticionIngresar = new Peticion(TipoAccion.INGRESAR, elUsr+"-"+elPwd );
+        
+        Client conexion = new Client(peticionIngresar);
+        
+        boolean respuesta = (boolean) conexion.getRespuestaServer();
+        jTextField1.setText(respuesta ? "Todo OK, va para adentro!" 
+                                     : "!Credenciales del usuario admin incorrectas!"); 
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

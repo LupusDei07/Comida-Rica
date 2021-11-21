@@ -18,6 +18,7 @@ public class ControladorServidor {
     
     private Administrador admUsr = new Administrador();
     private GestorProductos listaProductos = new GestorProductos();
+    private GestorPedidos listaPedidos = new GestorPedidos();
 
     public ControladorServidor() {
     }
@@ -35,6 +36,13 @@ public class ControladorServidor {
                 peticionRecibida.setDatosSalida(listaProductos.obtenerLista());
                 break; 
             case MODIFICAR_PRODUCTO:
+                
+                
+                
+                
+                
+                
+                
                 break;
             case AGREGAR_CARRITO:
                 break;         
@@ -43,18 +51,14 @@ public class ControladorServidor {
                  String partesBebida = (String) peticionRecibida.getDatosEntrada();
                  String [] splitBebidas  = partesBebida.split("-"); 
                  Bebida newBebida = new Bebida();
-                 listaProductos.agregarProducto(newBebida);
-                 
-                       
+                 listaProductos.agregarProducto(newBebida);                      
                 break;
             case AGREGAR_PRODUCTO_COMIDA:
                 //comida
                  String partesComida = (String) peticionRecibida.getDatosEntrada();
                  String [] splitComida   = partesComida.split("-"); 
                  Comida newComida = new Comida();
-                 listaProductos.agregarProducto(newComida);
-                 
-                       
+                 listaProductos.agregarProducto(newComida);                  
                 break; 
             case CERRAR_SESION:
                 break;        
@@ -65,8 +69,11 @@ public class ControladorServidor {
             case TIPOS_PEDIDOS:
                 break;
             case REALIZAR_PEDIDO:
+                
+                
                 break;
             case VER_PEDIDOS:
+                peticionRecibida.setDatosSalida(listaPedidos.getListaPedidos());
                 break;
             case CERRAR_PESTANA:
                 break;
