@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Control.CarritoPedido;
 import Control.GestorPedidos;
 import Control.GestorProductos;
 import Modelo.Bebida;
@@ -26,7 +27,7 @@ public class ComidaRica {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        
+        
 //        GestorProductos gestor=new GestorProductos();
 //        Productos producto;
 //        producto = new Comida();
@@ -67,30 +68,53 @@ public class ComidaRica {
         */
         
         //new Server();
+        /*
+        GestorProductos gestor=new GestorProductos();
+        Productos producto1=new Comida("Patito", 10, 20, 30, "Patito feo");
+        gestor.agregar(producto1);
+        Comida-Bebida
+        Ubicacion del archivo a guardar
+        Arraylist productos
+        gestor2.guardarArchivo(gestor2.obtenerLista());
+        GestorProductos gestor2=new GestorProductos();
+        gestor2.leerArchivo();
+        System.out.println(gestor2.obtenerLista());
+           System.out.println(prueba);
+           */
+//           ArrayList<Productos> productos=new ArrayList<Productos>();
+//           System.out.println(gestor.obtenerLista());
+//           Collections.sort(prueba);
+//           System.out.println(gestor.obtenerListaOrdenada());
         
-        //GestorProductos gestor=new GestorProductos();
-        //Productos producto1=new Comida("Patito", 10, 20, 30, "Patito feo");
-        //gestor.agregar(producto1);
-        //Comida-Bebida
-        //Ubicacion del archivo a guardar
-        //Arraylist productos
-        //gestor2.guardarArchivo(gestor2.obtenerLista());
-        //GestorProductos gestor2=new GestorProductos();
-        //gestor2.leerArchivo();
-        //System.out.println(gestor2.obtenerLista());
-           //System.out.println(prueba);
-           /*
-           ArrayList<Productos> productos=new ArrayList<Productos>();
-           System.out.println(gestor.obtenerLista());
-           Collections.sort(prueba);
-           System.out.println(gestor.obtenerListaOrdenada());
-        */
-        GestorPedidos gestor = new GestorPedidos();
-        Pedido pedido=new Pedido(12, 120, "Pepsi", Modelo.TipoPedido.EXPRESS);
+        GestorPedidos gestor2=new GestorPedidos();   
+           
+        CarritoPedido gestor = new CarritoPedido();
+        Pedido pedido=new Pedido(12, 120, "Pepsi");
         gestor.agregar(pedido);
-        System.out.println(gestor.getListaPedidos());
         gestor.modificar(2, "Pepsi");
-        System.out.println(gestor.getListaPedidos());
+        gestor.setTipoPedido(Modelo.TipoPedido.EXPRESS);
+        
+        
+        gestor2.agregarCarrito(gestor);
+        
+        CarritoPedido gestor3 = new CarritoPedido();
+        pedido=new Pedido(12, 120, "Pepsi");
+        gestor3.agregar(pedido);
+        pedido=new Pedido(12, 120, "COCA");
+        gestor3.agregar(pedido);
+        gestor3.setTipoPedido(Modelo.TipoPedido.COMER_AHI);
+        
+        gestor2.agregarCarrito(gestor3);
+        
+        
+        ArrayList<CarritoPedido> lista= gestor2.getListaPedidos();
+        System.out.println(lista.size());
+        System.out.println(lista.get(0));
+        System.out.println(lista.get(1));
+        
+        int[] contador=gestor2.getEstadisticaTipoPedido();
+        System.out.println(contador[0]+" "+contador[1]+" "+contador[2]);
+        //System.out.println(gestor2.getListaPedidos());
         
     }
 

@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Control.CarritoPedido;
 import Modelo.Pedido;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -70,7 +71,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     
     
     boolean isAdmin= true;
-    ArrayList<Pedido> listaPedidos=new ArrayList<Pedido>();
+    ArrayList<Carrito> listaPedidos=new ArrayList<Carrito>();
     /**
      * Creates new form InterfazProncipal
      */
