@@ -41,7 +41,7 @@ public class EditarMenu extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jList1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 150, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 220, 200));
 
         jButton2.setText("Editar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {

@@ -3,16 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Modelo/Pedido.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/GestorProductos.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Servidor/MainServer.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Modelo/TipoPedido.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Servidor/Server.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/GestorPedidos.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Modelo/TipoAccion.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Modelo/Administrador.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/ComidaRica.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/ControladorServidor.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/IConstantes.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Productos.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/ICantidad.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/FormaDeRecibido.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Control/GestorProductos.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Comida.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/ComidaRica.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Comida.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/TipoAccion.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Bebida.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Control/ControladorServidor.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Bebida.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/CostoExpress.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/IRacion.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Peticion.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Modelo/Administrador.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Carrito.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/PedidosActuales.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Menu.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/EditarMenu.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Top10.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Servidor/Server.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/TipoPedido.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/MenosPedido.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/Ingresar.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Vista/InterfazPrincipal.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Comida%20Rica/src/Servidor/MainServer.java</file>
         </group>
     </open-files>
 </project-private>
