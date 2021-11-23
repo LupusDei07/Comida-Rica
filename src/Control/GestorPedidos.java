@@ -5,7 +5,7 @@
  */
 package Control;
 
-import Modelo.Pedido;
+import Vista.TipoPedido;
 import java.util.ArrayList;
 
 /**
@@ -13,34 +13,47 @@ import java.util.ArrayList;
  * @author yumii
  */
 public class GestorPedidos {
-    ArrayList<Pedido> listaPedidos;
+    ArrayList<CarritoPedido> listaPedidos;
 
     public GestorPedidos() {
-        this.listaPedidos = new ArrayList<Pedido>();
+        this.listaPedidos = new ArrayList<CarritoPedido>();
     }
     
-    public void agregar(Pedido pedido){
-        listaPedidos.add(pedido);
+    
+    public void agregarCarrito(CarritoPedido carrito){
+        this.listaPedidos.add(carrito);
     }
 
-    public ArrayList<Pedido> getListaPedidos() {
+    public ArrayList<CarritoPedido> getListaPedidos() {
         return listaPedidos;
     }
     
-    public void modificar(int cantidad, String nombreProducto ){
-        for(int contador=0;contador<listaPedidos.size();contador++){
-            if(listaPedidos.get(contador).getNombreProducto().equals(nombreProducto)){
-                if(cantidad==0){
-                    listaPedidos.remove(contador);
-                }
-                else{
-                    listaPedidos.get(contador).setCantidad(cantidad);
-                }
+    public CarritoPedido getPedido(int cual){
+        return listaPedidos.get(cual);
+    }
+    
+    public void eliminarCarrito(int cual){
+        listaPedidos.remove(cual);
+    }
+     
+    public int [] getEstadisticaTipoPedido(){
+        int contadorExpress=0, contadorComerAhi=0,contadorParaLlevar=0;
+        
+        for(CarritoPedido carrito:listaPedidos){
+            if(carrito.getTipoPedido().equals(Modelo.TipoPedido.COMER_AHI)){
+                contadorComerAhi++;
+            }
+            else if(carrito.getTipoPedido().equals(Modelo.TipoPedido.EXPRESS)){
+                contadorExpress++;
+            }
+            else{
+                contadorParaLlevar++;
             }
         }
+        
+        int[]arregloContadores={contadorComerAhi,contadorParaLlevar,contadorExpress};
+        
+        return arregloContadores ;
     }
-       
-    public void eliminar(){
-        this.listaPedidos.clear();
-    }
+    
 }

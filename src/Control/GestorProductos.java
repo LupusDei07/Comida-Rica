@@ -90,6 +90,7 @@ public class GestorProductos {
         }
     }
     
+
     
     public Productos obtenerDatos(String tipo, String dato){
         String[]listaDatos=dato.split(" ,");

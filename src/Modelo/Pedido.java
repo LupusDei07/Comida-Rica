@@ -15,7 +15,6 @@ public class Pedido {
     protected int cantidad;
     protected double costo;
     protected String nombreProducto;
-    protected TipoPedido tipoPedido;
     
     protected String direccion;
     protected String nombre;
@@ -31,12 +30,6 @@ public class Pedido {
         this.nombreProducto = producto;
     }
 
-    public Pedido(int cantidad, double costo, String nombreProducto, TipoPedido tipoPedido) {
-        this.cantidad = cantidad;
-        this.costo = costo;
-        this.nombreProducto = nombreProducto;
-        this.tipoPedido = tipoPedido;
-    }
 
     public String getDireccion() {
         return direccion;
@@ -61,17 +54,6 @@ public class Pedido {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-    
-    
-
-    public TipoPedido getTipoPedido() {
-        return tipoPedido;
-    }
-
-    public void setTipoPedido(TipoPedido tipoPedido) {
-        this.tipoPedido = tipoPedido;
-    }
-
     
     public int getCantidad() {
         return cantidad;
@@ -99,7 +81,7 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido{" + "cantidad=" + cantidad + ", costo=" + costo + ", nombreProducto=" + nombreProducto + ", tipoPedido=" + tipoPedido +
+        return "Pedido{" + "cantidad=" + cantidad + ", costo=" + costo + ", nombreProducto=" + nombreProducto +
                 ", direccion=" + direccion + ", nombre=" + nombre + ", telefono=" + telefono + '}';
     }
 
