@@ -5,6 +5,11 @@
  */
 package Vista;
 
+import Control.GestorProductos;
+import Modelo.Productos;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Usuario
@@ -16,6 +21,7 @@ public class EditarMenu extends javax.swing.JPanel {
      */
     public EditarMenu() {
         initComponents();
+        fillListBox();
     }
 
     /**
@@ -72,4 +78,19 @@ public class EditarMenu extends javax.swing.JPanel {
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void fillListBox() {
+        InterfazPrincipal.getGestorPro().leerArchivo();
+        DefaultListModel m = new DefaultListModel();
+        
+        ArrayList<Productos> l= new ArrayList<Productos>();
+        l= InterfazPrincipal.getGestorPro().obtenerLista();
+        
+        for (int i = 0; i < l.size(); i++) {
+            m.addElement(l.get(i).getNombre());  
+        }
+        jList1.setModel(m);
+        InterfazPrincipal.getGestorPro().guardarArchivo(l);
+        
+    }
 }

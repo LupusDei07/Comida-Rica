@@ -9,6 +9,8 @@ import Modelo.Administrador;
 import Modelo.Bebida;
 import Modelo.Comida;
 import Modelo.Peticion;
+import Modelo.Productos;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,6 +21,7 @@ public class ControladorServidor {
     private Administrador admUsr = new Administrador();
     private GestorProductos listaProductos = new GestorProductos();
     private GestorPedidos listaPedidos = new GestorPedidos();
+
 
     public ControladorServidor() {
     }
@@ -37,12 +40,7 @@ public class ControladorServidor {
                 break; 
             case MODIFICAR_PRODUCTO:
                 
-                
-                
-                
-                
-                
-                
+
                 break;
             case AGREGAR_CARRITO:
                 break;         
@@ -63,10 +61,33 @@ public class ControladorServidor {
             case CERRAR_SESION:
                 break;        
             case TOP_10:
+            ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
+            ArrayList<Productos> top10 = null;
+                for (int i = 0; i < 10; i++) {
+                    top10.add(listaOrdenada.get(i));   
+                }
+                peticionRecibida.setDatosSalida(top10);
+                
+                
+                
                 break;
+
+
+                
+                
+                
+                
             case MENOS_PEDIDOS:
+                
+                
+                
                 break;
+                
+                
+                
+                
             case TIPOS_PEDIDOS:
+                peticionRecibida.setDatosSalida(listaPedidos.getEstadisticaTipoPedido());
                 break;
             case REALIZAR_PEDIDO:
                 
@@ -74,8 +95,6 @@ public class ControladorServidor {
                 break;
             case VER_PEDIDOS:
                 peticionRecibida.setDatosSalida(listaPedidos.getListaPedidos());
-                break;
-            case CERRAR_PESTANA:
                 break;
             case VER_COMIDAS:
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("Comida"));
