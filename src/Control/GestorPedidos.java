@@ -13,8 +13,9 @@ import java.util.ArrayList;
  * @author yumii
  */
 public class GestorPedidos {
-    ArrayList<CarritoPedido> listaPedidos;
-
+    private ArrayList<CarritoPedido> listaPedidos;
+    private int contadorExpress=0, contadorComerAhi=0,contadorParaLlevar=0;
+    
     public GestorPedidos() {
         this.listaPedidos = new ArrayList<CarritoPedido>();
     }
@@ -35,25 +36,47 @@ public class GestorPedidos {
     public void eliminarCarrito(int cual){
         listaPedidos.remove(cual);
     }
+
+    public int getContadorExpress() {
+        return contadorExpress;
+    }
+
+    public void setContadorExpress(int contadorExpress) {
+        this.contadorExpress = contadorExpress;
+    }
+
+    public int getContadorComerAhi() {
+        return contadorComerAhi;
+    }
+
+    public void setContadorComerAhi(int contadorComerAhi) {
+        this.contadorComerAhi = contadorComerAhi;
+    }
+
+    public int getContadorParaLlevar() {
+        return contadorParaLlevar;
+    }
+
+    public void setContadorParaLlevar(int contadorParaLlevar) {
+        this.contadorParaLlevar = contadorParaLlevar;
+    }
      
     public int [] getEstadisticaTipoPedido(){
-        int contadorExpress=0, contadorComerAhi=0,contadorParaLlevar=0;
-        
-        for(CarritoPedido carrito:listaPedidos){
-            if(carrito.getTipoPedido().equals(Modelo.TipoPedido.COMER_AHI)){
-                contadorComerAhi++;
-            }
-            else if(carrito.getTipoPedido().equals(Modelo.TipoPedido.EXPRESS)){
-                contadorExpress++;
-            }
-            else{
-                contadorParaLlevar++;
-            }
-        }
-        
         int[]arregloContadores={contadorComerAhi,contadorParaLlevar,contadorExpress};
         
         return arregloContadores ;
     }
+    
+   public void actualizarEstadistica(CarritoPedido carrito){
+       if(carrito.getTipoPedido().equals(Modelo.TipoPedido.COMER_AHI)){
+            contadorComerAhi++;
+        }
+        else if(carrito.getTipoPedido().equals(Modelo.TipoPedido.EXPRESS)){
+            contadorExpress++;
+        }
+        else{
+            contadorParaLlevar++;
+        }
+   }
     
 }

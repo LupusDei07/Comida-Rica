@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Control.CarritoPedido;
+import Control.ControladorServidor;
 import Control.GestorPedidos;
 import Modelo.Pedido;
 import java.awt.event.ActionEvent;
@@ -12,12 +14,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import Control.GestorProductos;
 
 /**
  *
  * @author Usuario
  */
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
+    static CarritoPedido carritoP = new CarritoPedido();
+    static GestorPedidos gestorP= new GestorPedidos();
+    static GestorProductos gestorPro= new GestorProductos();
+    static ControladorServidor server =new ControladorServidor();
+    
+    
     static Ingresar ingresar= new Ingresar();
     static CostoExpress costo= new CostoExpress();
     static EditarMenu editMenu= new EditarMenu();
@@ -27,9 +36,48 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     static Carrito carrito=new Carrito();
     static PedidosActuales pActuales =new PedidosActuales();
     
+    
     MenosPedido mPedido= new MenosPedido();
     TipoPedido tPedido= new TipoPedido();
     Top10 t10=new Top10();
+    
+    
+
+    
+
+    public static CarritoPedido getCarritoP() {
+        return carritoP;
+    }
+
+    public static void setCarritoP(CarritoPedido carritoP) {
+        InterfazPrincipal.carritoP = carritoP;
+    }
+
+    public static GestorPedidos getGestorP() {
+        return gestorP;
+    }
+
+    public static void setGestorP(GestorPedidos gestorP) {
+        InterfazPrincipal.gestorP = gestorP;
+    }
+
+    public static GestorProductos getGestorPro() {
+        return gestorPro;
+    }
+
+    public static void setGestorPro(GestorProductos gestorPro) {
+        InterfazPrincipal.gestorPro = gestorPro;
+    }
+
+    public static ControladorServidor getServer() {
+        return server;
+    }
+
+    public static void setServer(ControladorServidor server) {
+        InterfazPrincipal.server = server;
+    }
+    
+    
     
 
     static void runBebida() {

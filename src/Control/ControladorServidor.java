@@ -112,8 +112,6 @@ public class ControladorServidor {
             case VER_PEDIDOS:
                 peticionRecibida.setDatosSalida(listaPedidos.getListaPedidos());
                 break;
-            case CERRAR_PESTANA:
-                break;
             case VER_COMIDAS:
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("Comida"));
                 break;
