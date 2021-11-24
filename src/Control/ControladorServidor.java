@@ -84,8 +84,8 @@ public class ControladorServidor {
                     top10.add(listaOrdenada.get(i));   
                 }
                 
-            }
-                
+            }  
+            peticionRecibida.setDatosSalida(top10);
                 break;
 
 
@@ -96,9 +96,17 @@ public class ControladorServidor {
                 
                 
             case MENOS_PEDIDOS:
-                
-                
-                
+            listaOrdenada = listaProductos.obtenerListaOrdenada();
+            ArrayList<Productos> menosPedidos = null;
+                for (int i = 0; i < listaOrdenada.size(); i++) {
+                    Productos get = listaOrdenada.get(i);
+                    if(get.getCantVecesPedida()==0){ 
+                        menosPedidos.add(listaOrdenada.get(i));
+                }
+   
+   
+                }
+                peticionRecibida.setDatosSalida(menosPedidos);
                 break;
                 
                 
