@@ -24,6 +24,8 @@ public class ControladorServidor {
 
 
     public ControladorServidor() {
+       listaProductos.leerArchivo();
+        
     }
     //INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
     //VER_BEBIDA,VER_COMIDAS
@@ -40,9 +42,18 @@ public class ControladorServidor {
                 break; 
             case MODIFICAR_PRODUCTO:
                 
+               
+                
 
                 break;
             case AGREGAR_CARRITO:
+                
+                
+                
+                
+                
+                
+                
                 break;         
             case AGREGAR_PRODUCTO_BEBIDA:
                 //Bebida
@@ -63,14 +74,21 @@ public class ControladorServidor {
             case TOP_10:
             ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
             ArrayList<Productos> top10 = null;
+            
+            if (listaOrdenada.size() <10)              
+                for (int i = 0; i < listaOrdenada.size(); i++) {
+                    top10.add(listaOrdenada.get(i));   
+                }
+            else{
                 for (int i = 0; i < 10; i++) {
                     top10.add(listaOrdenada.get(i));   
                 }
-                peticionRecibida.setDatosSalida(top10);
                 
-                
-                
+            }  
+            peticionRecibida.setDatosSalida(top10);
                 break;
+
+
 
 
                 
@@ -78,9 +96,17 @@ public class ControladorServidor {
                 
                 
             case MENOS_PEDIDOS:
-                
-                
-                
+            listaOrdenada = listaProductos.obtenerListaOrdenada();
+            ArrayList<Productos> menosPedidos = null;
+                for (int i = 0; i < listaOrdenada.size(); i++) {
+                    Productos get = listaOrdenada.get(i);
+                    if(get.getCantVecesPedida()==0){ 
+                        menosPedidos.add(listaOrdenada.get(i));
+                }
+   
+   
+                }
+                peticionRecibida.setDatosSalida(menosPedidos);
                 break;
                 
                 
