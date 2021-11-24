@@ -40,9 +40,18 @@ public class ControladorServidor {
                 break; 
             case MODIFICAR_PRODUCTO:
                 
+               
+                
 
                 break;
             case AGREGAR_CARRITO:
+                
+                
+                
+                
+                
+                
+                
                 break;         
             case AGREGAR_PRODUCTO_BEBIDA:
                 //Bebida
@@ -63,14 +72,21 @@ public class ControladorServidor {
             case TOP_10:
             ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
             ArrayList<Productos> top10 = null;
+            
+            if (listaOrdenada.size() <10)              
+                for (int i = 0; i < listaOrdenada.size(); i++) {
+                    top10.add(listaOrdenada.get(i));   
+                }
+            else{
                 for (int i = 0; i < 10; i++) {
                     top10.add(listaOrdenada.get(i));   
                 }
-                peticionRecibida.setDatosSalida(top10);
                 
-                
+            }
                 
                 break;
+
+
 
 
                 
