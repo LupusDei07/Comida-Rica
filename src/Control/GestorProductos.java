@@ -127,15 +127,14 @@ public class GestorProductos {
      * @param imagen
      * Salidas: N/A
      */
-    public void modificarProducto(int cual, String nombre, double costo, int cantidad, double caloria, String imagen){
+    public void modificarProducto(int cual, String nombre, double costo, double cantidad, double caloria, String imagen){
         Productos comida =new Comida();
         Productos bebida= new Bebida();
         
         listaProductos.get(cual).setNombre(nombre);
         listaProductos.get(cual).setCosto(costo);
         listaProductos.get(cual).setCaloria(caloria);
-         listaProductos.get(cual).setImagen(imagen);
-        
+        listaProductos.get(cual).setImagen(imagen);
         if(listaProductos.get(cual).getClass().equals(comida.getClass())){
             listaProductos.get(cual).racion(cantidad);
         }

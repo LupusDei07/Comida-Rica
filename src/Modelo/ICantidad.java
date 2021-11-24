@@ -10,6 +10,6 @@ package Modelo;
  * @author yumii
  */
 public interface ICantidad {
-    public void cantidadLiquido(int cantidad);
+    public void cantidadLiquido(double cantidad);
     public double getCantidadLiquido();
 }

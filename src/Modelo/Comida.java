@@ -78,7 +78,7 @@ public class Comida extends Productos{
     }
     
     @Override
-    public void cantidadLiquido(int cantidad) {
+    public void cantidadLiquido(double cantidad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

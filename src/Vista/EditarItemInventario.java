@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Control.GestorProductos;
+import Modelo.Productos;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -15,7 +17,10 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class EditarItemInventario extends javax.swing.JPanel {
-
+    Productos producto=null;
+    int index =0;
+    String fileName="";
+    
     /**
      * Creates new form EditarItemInventario
      */
@@ -30,18 +35,21 @@ public class EditarItemInventario extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGrupoProducto = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
+        txtCalorias = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtCosto1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        rbtnComida = new javax.swing.JRadioButton();
+        rbtnBebida = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,11 +68,6 @@ public class EditarItemInventario extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Calorias");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 18));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Costo");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Seleccionar Imagen");
@@ -93,45 +96,87 @@ public class EditarItemInventario extends javax.swing.JPanel {
         });
         add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 379, 160, 30));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 142, -1));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 142, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtCantidadActionPerformed(evt);
             }
         });
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 142, -1));
+        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 142, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtCalorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtCaloriasActionPerformed(evt);
             }
         });
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 140, -1));
+        add(txtCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 140, -1));
 
         lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sinImagen.png"))); // NOI18N
         add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 210, 250));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtCosto1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtCosto1ActionPerformed(evt);
             }
         });
-        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 142, -1));
+        add(txtCosto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 142, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Costo");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        btnGrupoProducto.add(rbtnComida);
+        rbtnComida.setText("Comida");
+        rbtnComida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnComidaActionPerformed(evt);
+            }
+        });
+        add(rbtnComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 90, -1));
+
+        btnGrupoProducto.add(rbtnBebida);
+        rbtnBebida.setText("Bebida");
+        add(rbtnBebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 90, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    public void ingresarDatosProducto(){
+        
+        Productos comida=new Modelo.Comida();
+        Productos bebida = new Modelo.Bebida();
+        txtNombre.setText(producto.getNombre());
+        txtCosto1.setText(Double.toString(producto.getCosto()));
+        txtCalorias.setText(Double.toString(producto.getCaloria()));
+        
+        if(producto.getClass().equals(comida.getClass())){
+            txtCantidad.setText(Double.toString(producto.getRacion()));
+        }
+        else{
+            txtCantidad.setText(Double.toString(producto.getCantidadLiquido()));
+        }
+        
+        
+        ImageIcon icon = new ImageIcon(producto.getImagen());
+        lblImagen.setIcon(icon);
+        
+        rbtnBebida.setVisible(false);
+        rbtnComida.setVisible(false);
+        
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File file =chooser.getSelectedFile();
         
-        String fileName= file.getAbsolutePath();
+        fileName= file.getAbsolutePath();
         String extension= "";
         int posicion = fileName.lastIndexOf('.');
         if (posicion > 0) {
@@ -143,15 +188,30 @@ public class EditarItemInventario extends javax.swing.JPanel {
             lblImagen.setIcon(icon);
         }
         else{
-            JOptionPane.showMessageDialog(null, "ERROR", "Archivo inválido. Debe de seleccionar un archivo con extensión: \njpg, jpeg o png", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Archivo inválido. Debe de seleccionar un archivo con extensión: \njpg, jpeg o png", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public void limpiarCampos(){
+        txtCalorias.setText("");
+        txtCantidad.setText("");
+        txtCosto1.setText("");
+        txtNombre.setText("");
+        fileName="";
+        index=0;
+        producto=null;
+        
+        rbtnBebida.setVisible(true);
+        rbtnBebida.setSelected(false);
+        rbtnComida.setVisible(true);
+        rbtnComida.setSelected(false);
+        
+        
+    }
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
+        limpiarCampos();
         this.setVisible(false);
         InterfazPrincipal.editMenu.setVisible(true);
         InterfazPrincipal.contenedor.add(InterfazPrincipal.editMenu);
@@ -159,37 +219,66 @@ public class EditarItemInventario extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        if(producto==null){
+
+            if(rbtnBebida.isSelected()){
+                producto =new Modelo.Bebida(txtNombre.getText(),Double.parseDouble(txtCosto1.getText()),Double.parseDouble(txtCalorias.getText()),
+                        Double.parseDouble(txtCantidad.getText()),fileName);
+            }
+            else{
+                producto =new Modelo.Comida(txtNombre.getText(),Double.parseDouble(txtCosto1.getText()),Double.parseDouble(txtCalorias.getText()),
+                        Double.parseDouble(txtCantidad.getText()),fileName);
+            }
+            InterfazPrincipal.gestorPro.agregarProducto(producto);
+            System.out.println(InterfazPrincipal.gestorPro.obtenerLista());
+        }
+        else{
+           InterfazPrincipal.gestorPro.modificarProducto(index, txtNombre.getText(), Double.parseDouble(txtCosto1.getText()), Double.parseDouble(txtCantidad.getText()),
+                   Double.parseDouble(txtCalorias.getText()), fileName);
+        } 
+        InterfazPrincipal.gestorPro.guardarArchivo(InterfazPrincipal.gestorPro.obtenerLista());
+        InterfazPrincipal.gestorPro.leerArchivo();
+        System.out.println(InterfazPrincipal.gestorPro.obtenerLista());
+        InterfazPrincipal.editMenu.fillListBox();
+        limpiarCampos();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtCantidadActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtCaloriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCaloriasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtCaloriasActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtCosto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCosto1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtCosto1ActionPerformed
+
+    private void rbtnComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnComidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnComidaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btnGrupoProducto;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblImagen;
+    private javax.swing.JRadioButton rbtnBebida;
+    private javax.swing.JRadioButton rbtnComida;
+    private javax.swing.JTextField txtCalorias;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCosto1;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

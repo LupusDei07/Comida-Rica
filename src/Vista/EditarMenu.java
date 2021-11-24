@@ -6,9 +6,13 @@
 package Vista;
 
 import Control.GestorProductos;
+import Modelo.Client;
+import Modelo.Peticion;
 import Modelo.Productos;
+import Modelo.TipoAccion;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -115,10 +119,17 @@ public class EditarMenu extends javax.swing.JPanel {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        InterfazPrincipal.editItem.setVisible(true);
         String temp= (String)jList1.getSelectedValue();
-        InterfazPrincipal.contenedor.add(InterfazPrincipal.editItem);
+        if(temp!=null){
+            Peticion peticionModificar = new Peticion(TipoAccion.MODIFICAR_PRODUCTO,jList1.getSelectedIndex());
+            Client conexion = new Client(peticionModificar);
+            
+            this.setVisible(false);
+            InterfazPrincipal.editItem.setVisible(true);
+            InterfazPrincipal.contenedor.add(InterfazPrincipal.editItem);
+            InterfazPrincipal.editItem.producto=(Productos)conexion.getRespuestaServer();
+            InterfazPrincipal.editItem.ingresarDatosProducto();
+        }
         
         
         
@@ -139,7 +150,7 @@ public class EditarMenu extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void fillListBox() {
+    public void fillListBox() {
         InterfazPrincipal.getGestorPro().leerArchivo();
         DefaultListModel m = new DefaultListModel();
         
@@ -150,7 +161,6 @@ public class EditarMenu extends javax.swing.JPanel {
             m.addElement(l.get(i).getNombre());  
         }
         jList1.setModel(m);
-        
         
     }
 }

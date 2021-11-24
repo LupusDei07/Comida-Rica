@@ -50,10 +50,8 @@ public class ControladorServidor {
                 peticionRecibida.setDatosSalida(listaProductos.obtenerLista());
                 break; 
             case MODIFICAR_PRODUCTO:
-                
-               
-                
-
+                int index= (int) peticionRecibida.getDatosEntrada();
+                peticionRecibida.setDatosSalida(listaProductos.buscar(index));
                 break;
             case AGREGAR_CARRITO:
                 

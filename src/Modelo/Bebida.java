@@ -10,7 +10,7 @@ package Modelo;
  * @author yumii
  */
 public class Bebida extends Productos{
-    int cantidadLiquido;
+    double cantidadLiquido;
     
     /**
      * Método constructor vacío
@@ -40,7 +40,7 @@ public class Bebida extends Productos{
      * @param imagen 
      * y de un solo se realiza la asignación de datos.
      */
-    public Bebida(String nombre, double costo, double caloria,int cantidadLiquido, String imagen) {
+    public Bebida(String nombre, double costo, double caloria,double cantidadLiquido, String imagen) {
         this.cantidadLiquido = cantidadLiquido;
         super.nombre=nombre;
         super.costo=costo;
@@ -91,7 +91,7 @@ public class Bebida extends Productos{
     }
 
     @Override
-    public void cantidadLiquido(int cantidad) {
+    public void cantidadLiquido(double cantidad) {
         this.cantidadLiquido=cantidad;
     }
 
@@ -101,8 +101,8 @@ public class Bebida extends Productos{
      */
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + this.cantidadLiquido;
+        int hash = 7;
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.cantidadLiquido) ^ (Double.doubleToLongBits(this.cantidadLiquido) >>> 32));
         return hash;
     }
 
