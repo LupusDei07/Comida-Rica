@@ -15,12 +15,19 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Control.GestorProductos;
+import Modelo.Client;
+import Modelo.Peticion;
+import Modelo.TipoAccion;
 
 /**
  *
  * @author Usuario
  */
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
+    
+    static boolean isAdmin= true;
+    static int costoExpress= 100;
+    
     static CarritoPedido carritoP = new CarritoPedido();
     static GestorPedidos gestorP= new GestorPedidos();
     static GestorProductos gestorPro= new GestorProductos();
@@ -35,14 +42,38 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     static Menu menu= new Menu();
     static Carrito carrito=new Carrito();
     static PedidosActuales pActuales =new PedidosActuales();
+    static EditarItemInventario editItem = new EditarItemInventario();
+
     
-    
+
     MenosPedido mPedido= new MenosPedido();
     TipoPedido tPedido= new TipoPedido();
     Top10 t10=new Top10();
     
     
 
+    
+
+    public static int getCostoExpress() {
+        return costoExpress;
+    }
+
+    public static void setCostoExpress(int costoExpress) {
+        InterfazPrincipal.costoExpress = costoExpress;
+    }
+
+    
+    
+    public static boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public static void setIsAdmin(boolean isAdmin) {
+        InterfazPrincipal.isAdmin = isAdmin;
+    }
+    
+    
+    
     
 
     public static CarritoPedido getCarritoP() {
@@ -82,43 +113,35 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     static void runBebida() {
         menu.setVisible(false);
-        if (bebida.isShowing()){
-        bebida.setVisible(false);
-        }else{
-            contenedor.add(bebida);
-            bebida.setVisible(true);
+        contenedor.add(bebida);
+        bebida.setVisible(true);
+        
             
-        }
+            
+        
         
     }
 
     static void runComida() {
         
         menu.setVisible(false);
-        if (comida.isShowing()){
-        comida.setVisible(false);
-        }else{
-            contenedor.add(comida);
-            comida.setVisible(true);
+        contenedor.add(comida);
+        comida.setVisible(true);
             
-        }
+        
     }
 
     static void runCarrito() {
         menu.setVisible(false);
-        if (carrito.isShowing()){
-        carrito.setVisible(false);
-        }else{
-            contenedor.add(carrito);
-            carrito.setVisible(true);
-            
-        }
+        contenedor.add(carrito);
+        carrito.setVisible(true);
+
     }
     
 
     
     
-    boolean isAdmin= true;
+    
     GestorPedidos listaPedidos=new GestorPedidos();
     /**
      * Creates new form InterfazProncipal
@@ -146,6 +169,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         bebida.setVisible(false);
         comida.setVisible(false);
         carrito.setVisible(false);
+        editItem.setVisible(false);
         
     }
 
@@ -352,6 +376,12 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        
+        Peticion peticionIngresar = new Peticion(TipoAccion.CERRAR_SESION,isAdmin);
+        Client conexion = new Client(peticionIngresar);     
+
+        isAdmin= (boolean) conexion.getRespuestaServer();
+        JOptionPane.showMessageDialog(rootPane, "Se Acaba de cerrar sesión");
    
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -413,13 +443,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
         
-        if (costo.isShowing()){
-        costo.setVisible(false);
-        }else{
-            contenedor.add(costo);
-            costo.setVisible(true);
+        costo.actualizar();
+        contenedor.add(costo);
+        costo.setVisible(true);
             
-        }
+
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
