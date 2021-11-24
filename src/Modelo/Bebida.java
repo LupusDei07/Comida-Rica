@@ -12,15 +12,34 @@ package Modelo;
 public class Bebida extends Productos{
     int cantidadLiquido;
     
+    /**
+     * Método constructor vacío
+     */
     public Bebida() {
     }
     
+    /**
+     * Método constructor que recibe:
+     * @param nombre
+     * @param costo
+     * @param caloria 
+     * y de un solo se realiza la asignación de datos.
+     */
     public Bebida(String nombre, int costo, int caloria){
         super.nombre=nombre;
         super.costo=costo;
         super.caloria=caloria;
     }
-
+    
+    /**
+     * Método constructor que recibe:
+     * @param nombre
+     * @param costo
+     * @param caloria
+     * @param cantidadLiquido
+     * @param imagen 
+     * y de un solo se realiza la asignación de datos.
+     */
     public Bebida(String nombre, double costo, double caloria,int cantidadLiquido, String imagen) {
         this.cantidadLiquido = cantidadLiquido;
         super.nombre=nombre;
@@ -29,6 +48,7 @@ public class Bebida extends Productos{
         super.imagen=imagen;
     }
     
+    //Getters y Setters de nombre, costo, caloría, imagen, cantidadLiquido, cantVecesPedida
     public String getNombre() {
         return nombre;
     }
@@ -75,6 +95,10 @@ public class Bebida extends Productos{
         this.cantidadLiquido=cantidad;
     }
 
+    /**
+     * Valor de hashCode
+     * @return 
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -82,6 +106,11 @@ public class Bebida extends Productos{
         return hash;
     }
 
+    /**
+     * Valor de equals
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -100,6 +129,10 @@ public class Bebida extends Productos{
         return true;
     }
 
+    /**
+     * Clase Abstracta 
+     * @param racion 
+     */
     @Override
     public void racion(double racion) {
     }
@@ -109,7 +142,8 @@ public class Bebida extends Productos{
         return "Bebida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" cantidadLiquido=" + cantidadLiquido + 
                 " cantidad veces pedido="+super.getCantVecesPedida()+'}';
     }
-
+    
+    //Implementación de los métodos del interface
     @Override
     public double getRacion() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
