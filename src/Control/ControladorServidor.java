@@ -47,9 +47,11 @@ public class ControladorServidor {
                  }
                 break;
             case VER_PRODUCTOS:
+                listaProductos.leerArchivo();
                 peticionRecibida.setDatosSalida(listaProductos.obtenerLista());
                 break; 
             case MODIFICAR_PRODUCTO:
+                listaProductos.leerArchivo();
                 int index= (int) peticionRecibida.getDatosEntrada();
                 peticionRecibida.setDatosSalida(listaProductos.buscar(index));
                 break;
@@ -64,15 +66,17 @@ public class ControladorServidor {
                 break;         
             case AGREGAR_PRODUCTO_BEBIDA:
                 //Bebida
-                 String partesBebida = (String) peticionRecibida.getDatosEntrada();
-                 Bebida newBebida = new Bebida();
-                 listaProductos.agregarProducto(newBebida);                      
+                listaProductos.leerArchivo();
+                String partesBebida = (String) peticionRecibida.getDatosEntrada();
+                Bebida newBebida = new Bebida();
+                listaProductos.agregarProducto(newBebida);                      
                 break;
             case AGREGAR_PRODUCTO_COMIDA:
                 //comida
-                 String partesComida = (String) peticionRecibida.getDatosEntrada();
-                 Comida newComida = new Comida();
-                 listaProductos.agregarProducto(newComida);                  
+                listaProductos.leerArchivo();
+                String partesComida = (String) peticionRecibida.getDatosEntrada();
+                Comida newComida = new Comida();
+                listaProductos.agregarProducto(newComida);                  
                 break; 
             case CERRAR_SESION:
                 if(peticionRecibida.getDatosEntrada().equals(true))
@@ -81,21 +85,22 @@ public class ControladorServidor {
                 
                 break;        
             case TOP_10:
-            ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
-            ArrayList<Productos> top10 = null;
-            
-            if (listaOrdenada.size() <10)              
-                for (int i = 0; i < listaOrdenada.size(); i++) {
-                    top10.add(listaOrdenada.get(i));   
-                }
-            else{
-                for (int i = 0; i < 10; i++) {
-                    top10.add(listaOrdenada.get(i));   
-                }
-                
-            }  
-            peticionRecibida.setDatosSalida(top10);
-                break;
+                listaProductos.leerArchivo();
+                ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
+                ArrayList<Productos> top10 = null;
+
+                if (listaOrdenada.size() <10)              
+                    for (int i = 0; i < listaOrdenada.size(); i++) {
+                        top10.add(listaOrdenada.get(i));   
+                    }
+                else{
+                    for (int i = 0; i < 10; i++) {
+                        top10.add(listaOrdenada.get(i));   
+                    }
+
+                }  
+                peticionRecibida.setDatosSalida(top10);
+                    break;
 
 
 
@@ -105,18 +110,19 @@ public class ControladorServidor {
                 
                 
             case MENOS_PEDIDOS:
-            listaOrdenada = listaProductos.obtenerListaOrdenada();
-            ArrayList<Productos> menosPedidos = null;
-                for (int i = 0; i < listaOrdenada.size(); i++) {
-                    Productos get = listaOrdenada.get(i);
-                    if(get.getCantVecesPedida()==0){ 
-                        menosPedidos.add(listaOrdenada.get(i));
-                }
-   
-   
-                }
-                peticionRecibida.setDatosSalida(menosPedidos);
-                break;
+                listaProductos.leerArchivo();
+                listaOrdenada = listaProductos.obtenerListaOrdenada();
+                ArrayList<Productos> menosPedidos = null;
+                    for (int i = 0; i < listaOrdenada.size(); i++) {
+                        Productos get = listaOrdenada.get(i);
+                        if(get.getCantVecesPedida()==0){ 
+                            menosPedidos.add(listaOrdenada.get(i));
+                    }
+
+
+                    }
+                    peticionRecibida.setDatosSalida(menosPedidos);
+                    break;
                 
                 
                 
@@ -132,32 +138,15 @@ public class ControladorServidor {
                 peticionRecibida.setDatosSalida(listaPedidos.getListaPedidos());
                 break;
             case VER_COMIDAS:
+                listaProductos.leerArchivo();
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("Comida"));
                 break;
             case VER_BEBIDA:
+                listaProductos.leerArchivo();
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("bebidas"));
                 break;
               
-            
-                
-                
-                
-            /*
-            case SALUDAR: 
-                peticionRecibida.setDatosSalida("Saludos cliente " + peticionRecibida.getDatosEntrada() + " desde el servidor!");
-                break;
-            case INGRESAR: 
-                 String credenciales = (String) peticionRecibida.getDatosEntrada();
-                 String [] partes  = credenciales.split("-"); 
-                 boolean admOK = admUsr.validarAdm(partes[0], partes[1]);
-                 peticionRecibida.setDatosSalida(admOK);
-                break;
-            case VER_PRODUCTOS: 
-                break;
-            case CONSULTAR_PRODUCTO: 
-                break;
-            case AGREGAR_CARRITO: 
-                break;*/
+
         }
         return peticionRecibida;
     }

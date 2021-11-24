@@ -128,7 +128,9 @@ public class EditarMenu extends javax.swing.JPanel {
             InterfazPrincipal.editItem.setVisible(true);
             InterfazPrincipal.contenedor.add(InterfazPrincipal.editItem);
             InterfazPrincipal.editItem.producto=(Productos)conexion.getRespuestaServer();
+            InterfazPrincipal.editItem.index=jList1.getSelectedIndex();
             InterfazPrincipal.editItem.ingresarDatosProducto();
+            
         }
         
         

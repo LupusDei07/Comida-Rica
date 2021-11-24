@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class EditarItemInventario extends javax.swing.JPanel {
     Productos producto=null;
-    int index =0;
+    int index =-1;
     String fileName="";
     
     /**
@@ -147,7 +147,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void ingresarDatosProducto(){
-        
+        System.out.println(producto.getImagen());
         Productos comida=new Modelo.Comida();
         Productos bebida = new Modelo.Bebida();
         txtNombre.setText(producto.getNombre());
@@ -161,7 +161,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
             txtCantidad.setText(Double.toString(producto.getCantidadLiquido()));
         }
         
-        
+        fileName=producto.getImagen();
         ImageIcon icon = new ImageIcon(producto.getImagen());
         lblImagen.setIcon(icon);
         
@@ -198,14 +198,11 @@ public class EditarItemInventario extends javax.swing.JPanel {
         txtCosto1.setText("");
         txtNombre.setText("");
         fileName="";
-        index=0;
+        index=-1;
         producto=null;
         
-        rbtnBebida.setVisible(true);
-        rbtnBebida.setSelected(false);
-        rbtnComida.setVisible(true);
-        rbtnComida.setSelected(false);
-        
+        ImageIcon icon = new ImageIcon("src/Imagenes/sinImagen.png");
+        lblImagen.setIcon(icon);
         
     }
     
@@ -241,6 +238,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
         System.out.println(InterfazPrincipal.gestorPro.obtenerLista());
         InterfazPrincipal.editMenu.fillListBox();
         limpiarCampos();
+        btnGrupoProducto.clearSelection();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
