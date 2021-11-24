@@ -135,6 +135,8 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         menu.setVisible(false);
         contenedor.add(carrito);
         carrito.setVisible(true);
+        
+        
 
     }
     
