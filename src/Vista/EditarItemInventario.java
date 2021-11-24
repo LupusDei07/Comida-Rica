@@ -124,6 +124,10 @@ public class EditarItemInventario extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        this.setVisible(false);
+        InterfazPrincipal.editMenu.setVisible(true);
+        InterfazPrincipal.contenedor.add(InterfazPrincipal.editMenu);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

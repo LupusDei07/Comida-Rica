@@ -96,7 +96,7 @@ public class ComidaRica {
         
         
         gestor2.agregarCarrito(gestor);
-        
+        gestor2.actualizarEstadistica(gestor);
         CarritoPedido gestor3 = new CarritoPedido();
         pedido=new Pedido(12, 120, "Pepsi");
         gestor3.agregar(pedido);
@@ -105,7 +105,7 @@ public class ComidaRica {
         gestor3.setTipoPedido(Modelo.TipoPedido.COMER_AHI);
         
         gestor2.agregarCarrito(gestor3);
-        
+        gestor2.actualizarEstadistica(gestor3);
         
         ArrayList<CarritoPedido> lista= gestor2.getListaPedidos();
         System.out.println(lista.size());

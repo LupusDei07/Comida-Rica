@@ -67,14 +67,12 @@ public class ControladorServidor {
             case AGREGAR_PRODUCTO_BEBIDA:
                 //Bebida
                  String partesBebida = (String) peticionRecibida.getDatosEntrada();
-                 String [] splitBebidas  = partesBebida.split("-"); 
                  Bebida newBebida = new Bebida();
                  listaProductos.agregarProducto(newBebida);                      
                 break;
             case AGREGAR_PRODUCTO_COMIDA:
                 //comida
                  String partesComida = (String) peticionRecibida.getDatosEntrada();
-                 String [] splitComida   = partesComida.split("-"); 
                  Comida newComida = new Comida();
                  listaProductos.agregarProducto(newComida);                  
                 break; 

@@ -106,6 +106,10 @@ public class EditarMenu extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        InterfazPrincipal.editItem.setVisible(true);
+        InterfazPrincipal.contenedor.add(InterfazPrincipal.editItem);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked

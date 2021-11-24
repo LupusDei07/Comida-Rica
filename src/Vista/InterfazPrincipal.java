@@ -38,6 +38,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     static Menu menu= new Menu();
     static Carrito carrito=new Carrito();
     static PedidosActuales pActuales =new PedidosActuales();
+    static EditarItemInventario editItem = new EditarItemInventario();
     
     
     MenosPedido mPedido= new MenosPedido();
@@ -97,37 +98,29 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     static void runBebida() {
         menu.setVisible(false);
-        if (bebida.isShowing()){
-        bebida.setVisible(false);
-        }else{
-            contenedor.add(bebida);
-            bebida.setVisible(true);
+        contenedor.add(bebida);
+        bebida.setVisible(true);
+        
             
-        }
+            
+        
         
     }
 
     static void runComida() {
         
         menu.setVisible(false);
-        if (comida.isShowing()){
-        comida.setVisible(false);
-        }else{
-            contenedor.add(comida);
-            comida.setVisible(true);
+        contenedor.add(comida);
+        comida.setVisible(true);
             
-        }
+        
     }
 
     static void runCarrito() {
         menu.setVisible(false);
-        if (carrito.isShowing()){
-        carrito.setVisible(false);
-        }else{
-            contenedor.add(carrito);
-            carrito.setVisible(true);
-            
-        }
+        contenedor.add(carrito);
+        carrito.setVisible(true);
+
     }
     
 
@@ -161,6 +154,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         bebida.setVisible(false);
         comida.setVisible(false);
         carrito.setVisible(false);
+        editItem.setVisible(false);
         
     }
 

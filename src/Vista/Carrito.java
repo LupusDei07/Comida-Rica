@@ -43,6 +43,8 @@ public class Carrito extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         this.setVisible(false);
+        InterfazPrincipal.menu.setVisible(true);
+        InterfazPrincipal.contenedor.add(InterfazPrincipal.menu);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

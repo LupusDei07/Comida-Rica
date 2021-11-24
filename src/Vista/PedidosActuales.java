@@ -5,6 +5,11 @@
  */
 package Vista;
 
+import Control.CarritoPedido;
+import Modelo.Productos;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Usuario
@@ -16,6 +21,8 @@ public class PedidosActuales extends javax.swing.JPanel {
      */
     public PedidosActuales() {
         initComponents();
+        
+        fillListBox();
     }
 
     /**
@@ -78,4 +85,18 @@ public class PedidosActuales extends javax.swing.JPanel {
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void fillListBox() {
+        
+        DefaultListModel m = new DefaultListModel();
+        
+        ArrayList<CarritoPedido> l= new ArrayList<CarritoPedido>();
+        l= InterfazPrincipal.getGestorP().getListaPedidos();
+        
+        for (int i = 0; i < l.size(); i++) {
+            m.addElement(l.get(i));  
+        }
+        jList1.setModel(m);
+        
+    }
 }
