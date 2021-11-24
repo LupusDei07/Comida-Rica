@@ -24,6 +24,10 @@ import Modelo.TipoAccion;
  * @author Usuario
  */
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
+    
+    static boolean isAdmin= true;
+    static int costoExpress= 100;
+    
     static CarritoPedido carritoP = new CarritoPedido();
     static GestorPedidos gestorP= new GestorPedidos();
     static GestorProductos gestorPro= new GestorProductos();
@@ -39,16 +43,27 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     static Carrito carrito=new Carrito();
     static PedidosActuales pActuales =new PedidosActuales();
     static EditarItemInventario editItem = new EditarItemInventario();
+
     
-    
+
     MenosPedido mPedido= new MenosPedido();
     TipoPedido tPedido= new TipoPedido();
     Top10 t10=new Top10();
     
     
 
-    static boolean isAdmin= true;
+    
 
+    public static int getCostoExpress() {
+        return costoExpress;
+    }
+
+    public static void setCostoExpress(int costoExpress) {
+        InterfazPrincipal.costoExpress = costoExpress;
+    }
+
+    
+    
     public static boolean getIsAdmin() {
         return isAdmin;
     }
@@ -428,13 +443,11 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
         
-        if (costo.isShowing()){
-        costo.setVisible(false);
-        }else{
-            contenedor.add(costo);
-            costo.setVisible(true);
+        costo.actualizar();
+        contenedor.add(costo);
+        costo.setVisible(true);
             
-        }
+
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
