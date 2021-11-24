@@ -35,7 +35,8 @@ public class Ingresar extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new java.awt.GridBagLayout());
@@ -46,9 +47,10 @@ public class Ingresar extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 159;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(100, 0, 0, 0);
         add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -56,12 +58,12 @@ public class Ingresar extends javax.swing.JPanel {
         jLabel2.setText("Usuario");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 16;
         gridBagConstraints.ipady = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(68, 50, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(72, 40, 0, 0);
         add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -69,9 +71,10 @@ public class Ingresar extends javax.swing.JPanel {
         jLabel3.setText("Contrasena");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 40, 0, 0);
         add(jLabel3, gridBagConstraints);
 
         jButton1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -83,10 +86,10 @@ public class Ingresar extends javax.swing.JPanel {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 50, 29, 0);
+        gridBagConstraints.insets = new java.awt.Insets(12, 50, 0, 0);
         add(jButton1, gridBagConstraints);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,27 +98,40 @@ public class Ingresar extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 195;
+        gridBagConstraints.ipady = -4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(68, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(72, 2, 0, 0);
         add(jTextField1, gridBagConstraints);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTextField3.setEditable(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.ipadx = 415;
+        gridBagConstraints.ipady = 96;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 0);
+        add(jTextField3, gridBagConstraints);
+
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jPasswordField1ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 195;
+        gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        add(jTextField2, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(8, 2, 0, 0);
+        add(jPasswordField1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -130,7 +146,7 @@ public class Ingresar extends javax.swing.JPanel {
         
         //Hay que validar de que jTextField2 ingrese datos o da error el server
         String elUsr= jTextField1.getText();
-        String elPwd= jTextField2.getText();
+        String elPwd= jPasswordField1.getText();
         
         // se crea una peticion de tipo INGRESAR que devolverá un boolean como respuesta.
         // esto por definición de los servicios provistos por la aplicación servidora
@@ -138,12 +154,18 @@ public class Ingresar extends javax.swing.JPanel {
         Peticion peticionIngresar = new Peticion(TipoAccion.INGRESAR, elUsr+"-"+elPwd );
         
         Client conexion = new Client(peticionIngresar);
-        
+        if(conexion.getRespuestaServer() == null){
+        jTextField3.setText("No se ha ingresado datos!");
+        }else{
         boolean respuesta = (boolean) conexion.getRespuestaServer();
-        jTextField1.setText(respuesta ? "Todo OK, va para adentro!" 
+        jTextField3.setText(respuesta ? "Todo OK, va para adentro!"  
                                      : "!Credenciales del usuario admin incorrectas!"); 
-        
-        
+            if(respuesta== true){
+
+            InterfazPrincipal.setIsAdmin(respuesta);
+
+            }
+        }
         
         
         
@@ -152,9 +174,9 @@ public class Ingresar extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -162,7 +184,8 @@ public class Ingresar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

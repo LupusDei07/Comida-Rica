@@ -27,15 +27,24 @@ public class ControladorServidor {
        listaProductos.leerArchivo();
         
     }
+    
     //INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
     //VER_BEBIDA,VER_COMIDAS
     public Peticion procesarPeticion(Peticion peticionRecibida) {
         switch (peticionRecibida.getAccion()){
             case INGRESAR: 
+                
+                
+                
                  String credenciales = (String) peticionRecibida.getDatosEntrada();
+                 
+                 if(credenciales.equals("-")){
+                 peticionRecibida.setDatosSalida(null);
+                 }else{
                  String [] partes  = credenciales.split("-"); 
                  boolean admOK = admUsr.validarAdm(partes[0], partes[1]);
                  peticionRecibida.setDatosSalida(admOK);
+                 }
                 break;
             case VER_PRODUCTOS:
                 peticionRecibida.setDatosSalida(listaProductos.obtenerLista());
@@ -70,6 +79,10 @@ public class ControladorServidor {
                  listaProductos.agregarProducto(newComida);                  
                 break; 
             case CERRAR_SESION:
+                if(peticionRecibida.getDatosEntrada().equals(true))
+                peticionRecibida.setDatosSalida(false);
+                
+                
                 break;        
             case TOP_10:
             ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
@@ -128,7 +141,7 @@ public class ControladorServidor {
             case VER_BEBIDA:
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("bebidas"));
                 break;
-          
+              
             
                 
                 

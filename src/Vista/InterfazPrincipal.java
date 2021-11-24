@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Control.GestorProductos;
+import Modelo.Client;
+import Modelo.Peticion;
+import Modelo.TipoAccion;
 
 /**
  *
@@ -43,6 +46,18 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     
     
 
+    static boolean isAdmin= true;
+
+    public static boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public static void setIsAdmin(boolean isAdmin) {
+        InterfazPrincipal.isAdmin = isAdmin;
+    }
+    
+    
+    
     
 
     public static CarritoPedido getCarritoP() {
@@ -118,7 +133,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     
     
-    boolean isAdmin= true;
+    
     GestorPedidos listaPedidos=new GestorPedidos();
     /**
      * Creates new form InterfazProncipal
@@ -352,6 +367,12 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        
+        Peticion peticionIngresar = new Peticion(TipoAccion.CERRAR_SESION,isAdmin);
+        Client conexion = new Client(peticionIngresar);     
+
+        isAdmin= (boolean) conexion.getRespuestaServer();
+        JOptionPane.showMessageDialog(rootPane, "Se Acaba de cerrar sesión");
    
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
