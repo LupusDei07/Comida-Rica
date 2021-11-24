@@ -24,6 +24,8 @@ public class ControladorServidor {
 
 
     public ControladorServidor() {
+       listaProductos.leerArchivo();
+        
     }
     //INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
     //VER_BEBIDA,VER_COMIDAS
