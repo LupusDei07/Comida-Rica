@@ -190,6 +190,9 @@ public class GestorProductos {
             FileInputStream fis=new FileInputStream(archivo);
             ObjectInputStream ois=new ObjectInputStream(fis);
             lista= (ArrayList<Productos>) ois.readObject();
+            
+            fis.close();
+            ois.close();
         } catch (Exception e) {
             System.out.println("Error a la hora de abrir el archivo");
             e.printStackTrace();
