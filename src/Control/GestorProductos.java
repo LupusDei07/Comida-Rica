@@ -205,8 +205,6 @@ public class GestorProductos {
      */
     public void guardarArchivo(ArrayList<Productos> lista){                                                                     
         File archivo= new File("C:Archivos//ProductosBD.dat");
-        Productos comida= new Comida();
-        Productos bebida=new Bebida();
         try {
             FileOutputStream fos= new FileOutputStream(archivo);
             ObjectOutputStream oos=new ObjectOutputStream(fos);
