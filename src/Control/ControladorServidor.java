@@ -78,6 +78,11 @@ public class ControladorServidor {
                 Comida newComida = new Comida();
                 listaProductos.agregarProducto(newComida);                  
                 break; 
+            case ELIMINAR_PRODUCTO:
+                listaProductos.leerArchivo();
+                index= (int) peticionRecibida.getDatosEntrada();
+                listaProductos.eliminar(index);
+                
             case CERRAR_SESION:
                 if(peticionRecibida.getDatosEntrada().equals(true))
                 peticionRecibida.setDatosSalida(false);
@@ -100,14 +105,7 @@ public class ControladorServidor {
 
                 }  
                 peticionRecibida.setDatosSalida(top10);
-                    break;
-
-
-
-
-                
-                
-                
+                    break; 
                 
             case MENOS_PEDIDOS:
                 listaProductos.leerArchivo();
@@ -123,10 +121,7 @@ public class ControladorServidor {
                     }
                     peticionRecibida.setDatosSalida(menosPedidos);
                     break;
-                
-                
-                
-                
+
             case TIPOS_PEDIDOS:
                 peticionRecibida.setDatosSalida(listaPedidos.getEstadisticaTipoPedido());
                 break;

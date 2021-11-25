@@ -72,7 +72,7 @@ public class EditarMenu extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(77, 6, 0, 0);
         add(jScrollPane1, gridBagConstraints);
 
-        jButton3.setText("Eliminar");
+        jButton3.setText("Agregar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -109,7 +109,7 @@ public class EditarMenu extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(60, 60, 91, 0);
         add(jButton1, gridBagConstraints);
 
-        jButton4.setText("Agregar");
+        jButton4.setText("Eliminar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -162,6 +162,12 @@ public class EditarMenu extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        String temp= (String)jList1.getSelectedValue();
+        if(temp!=null){
+            Peticion peticionEliminar = new Peticion(TipoAccion.ELIMINAR_PRODUCTO,jList1.getSelectedIndex());
+            Client conexion = new Client(peticionEliminar);
+            fillListBox();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

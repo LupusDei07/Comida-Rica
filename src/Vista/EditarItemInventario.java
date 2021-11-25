@@ -26,6 +26,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
      */
     public EditarItemInventario() {
         initComponents();
+        btnEliminar.setVisible(false);
         ocultarErrores();
     }
 
@@ -38,6 +39,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
 
         btnGrupoProducto = new javax.swing.ButtonGroup();
         jLabel9 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -59,9 +61,18 @@ public class EditarItemInventario extends javax.swing.JPanel {
         lblErrorNombre = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
 
         jLabel9.setForeground(new java.awt.Color(255, 51, 51));
         jLabel9.setText("Debe de seleccionar una opción");
+
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton5.setText("Agregar a inventario");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,13 +110,13 @@ public class EditarItemInventario extends javax.swing.JPanel {
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, 30));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setText("Agregar a inventario");
+        jButton4.setText("Agregar Inventario");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 379, 160, 30));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 180, 30));
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,6 +201,15 @@ public class EditarItemInventario extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tipo Producto");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     public void ingresarDatosProducto(){
@@ -398,12 +418,22 @@ public class EditarItemInventario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnComidaActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
     private javax.swing.ButtonGroup btnGrupoProducto;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

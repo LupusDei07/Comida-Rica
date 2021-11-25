@@ -142,7 +142,6 @@ public class GestorProductos {
             listaProductos.get(cual).cantidadLiquido(cantidad);
         }
     }
-    
 
     /**
      * Funcionamiento: Obtiene los datos de un producto en específico, para ello se verifica si el producto es de tipo comida

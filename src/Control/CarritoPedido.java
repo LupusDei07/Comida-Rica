@@ -18,6 +18,11 @@ import java.util.ArrayList;
 public class CarritoPedido {
     ArrayList<Pedido> listaPedidos;
     protected TipoPedido tipoPedido;
+    
+    protected int costoFinal;
+    protected String direccion;
+    protected String nombre;
+    protected int telefono;
 
     /**
      * Funcionamiento: Método constructor que creará el arraylist de listaPedidos
@@ -28,6 +33,40 @@ public class CarritoPedido {
         this.listaPedidos = new ArrayList<Pedido>();
     }
     
+    //Getters y setters
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public int getCostoFinal() {
+        return costoFinal;
+    }
+
+    public void setCostoFinal(int costoFinal) {
+        this.costoFinal = costoFinal;
+    }
+    
+
     /**
      * Funcionamiento: Responsable de agregar un nuevo pedido a la listaPedidos
      * Salidas: N/A
