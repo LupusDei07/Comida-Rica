@@ -5,7 +5,15 @@
  */
 package Control;
 
+import Modelo.Bebida;
+import Modelo.Comida;
+import Modelo.Productos;
 import Vista.TipoPedido;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -124,5 +132,50 @@ public class GestorPedidos {
             contadorParaLlevar++;
         }
    }
+   
+   /**
+     * Funcionammiento: Lee el archivo binario y carga los datos a la listaProductos.
+     * Entradas: N/A
+     * Salidas: N/A
+     */
+    public void leerArchivo(){
+        File archivo=new File("C:Archivos//CarritosBD.dat");
+        ArrayList<CarritoPedido> lista=new ArrayList<CarritoPedido>();
+        try {
+            FileInputStream fis=new FileInputStream(archivo);
+            ObjectInputStream ois=new ObjectInputStream(fis);
+            lista= (ArrayList<CarritoPedido>) ois.readObject();
+            
+            fis.close();
+            ois.close();
+        } catch (Exception e) {
+            System.out.println("Error a la hora de abrir el archivo");
+            e.printStackTrace();
+        }
+        this.listaPedidos=lista;
+    }
+    
+    /**
+     * Funcionamiento:Guarda en un archivo binario la lista de productos
+     * @param lista 
+     * Salidas: N/A
+     */
+    public void guardarArchivo(ArrayList<Productos> lista){                                                                     
+        File archivo= new File("C:Archivos//CarritosBD.dat");
+        Productos comida= new Comida();
+        Productos bebida=new Bebida();
+        try {
+            FileOutputStream fos= new FileOutputStream(archivo);
+            ObjectOutputStream oos=new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            
+            oos.close();
+            fos.close();
+            
+        } catch (Exception e) {
+            System.out.println("Error a la hora de guardar el archivo.");
+            e.printStackTrace();
+        }
+    }
     
 }
