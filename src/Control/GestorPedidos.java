@@ -19,6 +19,11 @@ public class GestorPedidos {
     /**
      * Método Constructor que crea la un arraylist de tipo CarritoPedido
      */
+    
+    public void setListaPedidos(ArrayList<CarritoPedido> listaPedidos) {
+        this.listaPedidos = listaPedidos;
+    }
+
     public GestorPedidos() {
         this.listaPedidos = new ArrayList<CarritoPedido>();
     }
