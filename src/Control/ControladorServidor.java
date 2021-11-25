@@ -89,36 +89,14 @@ public class ControladorServidor {
                 
                 break;        
             case TOP_10:
-                listaProductos.leerArchivo();
-                ArrayList<Productos> listaOrdenada = listaProductos.obtenerListaOrdenada();
-                ArrayList<Productos> top10 = null;
-
-                if (listaOrdenada.size() <10)              
-                    for (int i = 0; i < listaOrdenada.size(); i++) {
-                        top10.add(listaOrdenada.get(i));   
-                    }
-                else{
-                    for (int i = 0; i < 10; i++) {
-                        top10.add(listaOrdenada.get(i));   
-                    }
-
-                }  
-                peticionRecibida.setDatosSalida(top10);
+                
+                
+             
+                
                     break; 
                 
             case MENOS_PEDIDOS:
-                listaProductos.leerArchivo();
-                listaOrdenada = listaProductos.obtenerListaOrdenada();
-                ArrayList<Productos> menosPedidos = null;
-                    for (int i = 0; i < listaOrdenada.size(); i++) {
-                        Productos get = listaOrdenada.get(i);
-                        if(get.getCantVecesPedida()==0){ 
-                            menosPedidos.add(listaOrdenada.get(i));
-                    }
-
-
-                    }
-                    peticionRecibida.setDatosSalida(menosPedidos);
+                
                     break;
 
             case TIPOS_PEDIDOS:

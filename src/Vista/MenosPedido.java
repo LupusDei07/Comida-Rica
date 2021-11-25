@@ -5,6 +5,11 @@
  */
 package Vista;
 
+import Modelo.Productos;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Usuario
@@ -16,6 +21,7 @@ public class MenosPedido extends javax.swing.JPanel {
      */
     public MenosPedido() {
         initComponents();
+        mostrar();
     }
 
     /**
@@ -25,35 +31,12 @@ public class MenosPedido extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Menos Pedidos", "Cantidad"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 25, -1, 350));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton1.setText("Regresar");
@@ -63,6 +46,10 @@ public class MenosPedido extends javax.swing.JPanel {
             }
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
+
+        jScrollPane2.setViewportView(jList1);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 360, 340));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -74,7 +61,27 @@ public class MenosPedido extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
+    public void mostrar() {
+        ArrayList<Productos> listaOrdenada=InterfazPrincipal.gestorPro.obtenerListaOrdenada();
+        DefaultListModel m = new DefaultListModel();
+        Collections.reverse(listaOrdenada);
+        
+        if (listaOrdenada.size() <10){             
+            for (int i = 0; i < listaOrdenada.size(); i++) {
+                m.addElement(i+1+ ". " +listaOrdenada.get(i).getNombre());
+            }
+        }else{
+            for (int i = 0; i < 10; i++) {
+                m.addElement(i+1+ ". " +listaOrdenada.get(i).getNombre());   
+            }
+
+        
+        }
+        jList1.setModel(m);
+    }
 }
+

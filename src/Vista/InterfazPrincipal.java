@@ -435,13 +435,10 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-       if (t10.isShowing()){
-        t10.setVisible(false);
-        }else{
-            contenedor.add(t10);
-            t10.setVisible(true);
-            
-        } 
+        t10.mostrar();
+        contenedor.add(t10);
+        t10.setVisible(true);
+ 
         
         
         
@@ -450,13 +447,10 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
-        if (mPedido.isShowing()){
-        mPedido.setVisible(false);
-        }else{
-            contenedor.add(mPedido);
-            mPedido.setVisible(true);
-            
-        } 
+        mPedido.mostrar();
+        contenedor.add(mPedido);
+        mPedido.setVisible(true);
+
         
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed

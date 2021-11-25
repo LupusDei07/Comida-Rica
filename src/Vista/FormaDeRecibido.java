@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import Modelo.Client;
+import Modelo.Peticion;
+import Modelo.TipoAccion;
+
 /**
  *
  * @author Usuario
@@ -118,7 +122,6 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         add(lblSoli2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 180, 20));
 
         txtSoli2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtSoli2.setText("jTextField1");
         add(txtSoli2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 150, -1));
 
         lblSoli1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -126,7 +129,11 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         add(lblSoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 180, 20));
 
         txtSoli1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtSoli1.setText("jTextField1");
+        txtSoli1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSoli1ActionPerformed(evt);
+            }
+        });
         add(txtSoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,6 +145,10 @@ public class FormaDeRecibido extends javax.swing.JPanel {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
+        Peticion peticionObtener = new Peticion(TipoAccion.OBTENER_COSTO_EXPRESS,null);
+        
+        Client conexion = new Client(peticionObtener);
+        
         lblSoli1.setText("Dirección");
         lblSoli1.setVisible(true);
         
@@ -149,6 +160,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         
         txtSoli2.setText("");
         txtSoli2.setVisible(true);
+        jLabel3.setText(Integer.toString((int)conexion.getRespuestaServer()));
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -176,6 +188,10 @@ public class FormaDeRecibido extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtSoli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSoli1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSoli1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
