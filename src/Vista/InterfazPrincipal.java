@@ -186,6 +186,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         labelfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo2.jpg"))); // NOI18N
         getContentPane().add(labelfondo, java.awt.BorderLayout.CENTER);
