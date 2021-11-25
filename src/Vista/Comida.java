@@ -51,7 +51,7 @@ public class Comida extends javax.swing.JPanel {
         lblImagen = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 153));
+        setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Regresar");
@@ -93,7 +93,7 @@ public class Comida extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(30, 40, 0, 0);
         add(jScrollPane1, gridBagConstraints);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(215, 189, 121));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N

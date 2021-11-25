@@ -77,7 +77,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
             }
         });
 
-        setBackground(new java.awt.Color(255, 204, 153));
+        setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N

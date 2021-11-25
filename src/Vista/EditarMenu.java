@@ -42,7 +42,7 @@ public class EditarMenu extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 204, 153));
+        setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {

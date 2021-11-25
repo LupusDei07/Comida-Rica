@@ -47,7 +47,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField2.setText("jTextField1");
 
-        setBackground(new java.awt.Color(255, 204, 153));
+        setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -59,7 +59,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, 30));
 
-        jRadioButton1.setBackground(new java.awt.Color(255, 204, 153));
+        jRadioButton1.setBackground(new java.awt.Color(215, 189, 121));
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton1.setText("Express");
@@ -70,7 +70,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         });
         add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
-        jRadioButton2.setBackground(new java.awt.Color(255, 204, 153));
+        jRadioButton2.setBackground(new java.awt.Color(215, 189, 121));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setText("Comer Aquí");
@@ -81,7 +81,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         });
         add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
-        jRadioButton3.setBackground(new java.awt.Color(255, 204, 153));
+        jRadioButton3.setBackground(new java.awt.Color(215, 189, 121));
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton3.setText("Para llevar");
