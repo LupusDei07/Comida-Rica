@@ -31,7 +31,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     static CarritoPedido carritoP = new CarritoPedido();
     static GestorPedidos gestorP= new GestorPedidos();
     static GestorProductos gestorPro= new GestorProductos();
-    static ControladorServidor server =new ControladorServidor();
+
     
     
     static Ingresar ingresar= new Ingresar();
@@ -100,13 +100,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
         InterfazPrincipal.gestorPro = gestorPro;
     }
 
-    public static ControladorServidor getServer() {
-        return server;
-    }
-
-    public static void setServer(ControladorServidor server) {
-        InterfazPrincipal.server = server;
-    }
+ 
     
     
     

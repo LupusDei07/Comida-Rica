@@ -86,11 +86,11 @@ public class TipoPedido extends javax.swing.JPanel {
     public void mostrar() {
         
          ArrayList<CarritoPedido> lista=InterfazPrincipal.gestorP.getListaPedidos();
-        String matris[][]= new String[3][2];
+        String matris[][]= new String[3][3];
         
             matris[0][0]="Comer ahi";
-            matris[0][1]="Para llevar";
-            matris[0][2]="Express";
+            matris[1][0]="Para llevar";
+            matris[2][0]="Express";
             
             for( CarritoPedido pedido: lista){
             
@@ -99,9 +99,9 @@ public class TipoPedido extends javax.swing.JPanel {
             
             
             
-            matris[1][0]=Integer.toString(InterfazPrincipal.gestorP.getContadorComerAhi());
+            matris[0][1]=Integer.toString(InterfazPrincipal.gestorP.getContadorComerAhi());
             matris[1][1]=Integer.toString(InterfazPrincipal.gestorP.getContadorParaLlevar());
-            matris[1][2]=Integer.toString(InterfazPrincipal.gestorP.getContadorExpress());
+            matris[2][1]=Integer.toString(InterfazPrincipal.gestorP.getContadorExpress());
         
         
         
