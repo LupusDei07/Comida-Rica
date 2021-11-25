@@ -6,9 +6,11 @@
 package Vista;
 
 import Control.CarritoPedido;
+import Control.GestorPedidos;
 import Modelo.Productos;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +21,10 @@ public class PedidosActuales extends javax.swing.JPanel {
     /**
      * Creates new form PedidosActuales
      */
+    DefaultListModel m = new DefaultListModel();
+    
+    ArrayList<CarritoPedido> l= new ArrayList<CarritoPedido>();
+    
     public PedidosActuales() {
         initComponents();
         
@@ -36,6 +42,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new java.awt.GridBagLayout());
@@ -56,7 +63,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(70, 116, 0, 238);
+        gridBagConstraints.insets = new java.awt.Insets(70, 116, 0, 0);
         add(jScrollPane1, gridBagConstraints);
 
         jButton2.setText("Regresar");
@@ -71,16 +78,48 @@ public class PedidosActuales extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(63, 40, 75, 0);
         add(jButton2, gridBagConstraints);
+
+        jButton1.setText("Eliminar Pedido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(63, 121, 75, 17);
+        add(jButton1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int fila =jList1.getSelectedIndex();
+        if (fila>=0){
+        
+        m.remove(fila);
+        
+        }else{
+        
+        JOptionPane.showMessageDialog(jButton1, fila);
+        }
+        
+        InterfazPrincipal.getGestorP().setListaPedidos(l);
+         
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -88,9 +127,8 @@ public class PedidosActuales extends javax.swing.JPanel {
 
     private void fillListBox() {
         
-        DefaultListModel m = new DefaultListModel();
         
-        ArrayList<CarritoPedido> l= new ArrayList<CarritoPedido>();
+        
         l= InterfazPrincipal.getGestorP().getListaPedidos();
         
         for (int i = 0; i < l.size(); i++) {
