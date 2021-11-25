@@ -165,9 +165,9 @@ public class Comida extends javax.swing.JPanel {
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         // TODO add your handling code here:
         
-        ImageIcon icon = new ImageIcon(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex()).getImagen());
+        ImageIcon icon = new ImageIcon(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getImagen());
         lblImagen.setIcon(icon);
-       jTextField2.setText(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getNombre());
+        jTextField2.setText(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getNombre());
         jTextField3.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getRacion()));
         jTextField4.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getCaloria()));       
         jTextField5.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getCosto()));
