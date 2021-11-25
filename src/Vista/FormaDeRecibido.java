@@ -160,7 +160,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         
         txtSoli2.setText("");
         txtSoli2.setVisible(true);
-        jLabel3.setText(Integer.toString((int)conexion.getRespuestaServer()));
+        jLabel3.setText(Integer.toString(InterfazPrincipal.carritoP.getCostoFinal()+(int)conexion.getRespuestaServer()));
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -170,6 +170,8 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         txtSoli1.setVisible(false);
         lblSoli2.setVisible(false);
         txtSoli2.setVisible(false);
+        
+        jLabel3.setText(Integer.toString(InterfazPrincipal.carritoP.getCostoFinal()));
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
@@ -183,10 +185,42 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         lblSoli2.setVisible(false);
         txtSoli2.setVisible(false);
         
+        jLabel3.setText(Integer.toString(InterfazPrincipal.carritoP.getCostoFinal()));
+        
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
+        
+        if (jRadioButton1.isSelected()){
+        InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.EXPRESS);
+        InterfazPrincipal.carritoP.setDireccion(txtSoli1.getText());
+        InterfazPrincipal.carritoP.setTelefono(Integer.parseInt(txtSoli2.getText()));
+        
+        
+        }if (jRadioButton2.isSelected()){
+         
+         InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.COMER_AHI);
+         
+                 
+        
+        
+        }else{
+        InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.PARA_LLEVAR);
+        InterfazPrincipal.carritoP.setNombre(txtSoli1.getText());
+
+        
+        }
+        
+        InterfazPrincipal.gestorP.agregarCarrito(InterfazPrincipal.carritoP);
+        
+        InterfazPrincipal.carritoP.eliminar();
+        InterfazPrincipal.nuevoCarritoP();
+        
+                
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtSoli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSoli1ActionPerformed
