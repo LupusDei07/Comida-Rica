@@ -19,7 +19,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         lblSoli1.setVisible(false);
         txtSoli1.setVisible(false);
         lblSoli2.setVisible(false);
-        txtSoli1.setVisible(false);
+        txtSoli2.setVisible(false);
     }
 
     /**
@@ -99,7 +99,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 130, 30));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 130, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Forma de Retiro");
@@ -110,12 +110,12 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("$$$$");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 100, -1));
 
         lblSoli2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSoli2.setText("Solicitud dato 2");
-        add(lblSoli2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 180, 20));
+        add(lblSoli2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 180, 20));
 
         txtSoli2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtSoli2.setText("jTextField1");
@@ -123,7 +123,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
 
         lblSoli1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblSoli1.setText("Solicitud dato 1");
-        add(lblSoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 180, 20));
+        add(lblSoli1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 180, 20));
 
         txtSoli1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtSoli1.setText("jTextField1");
@@ -138,13 +138,13 @@ public class FormaDeRecibido extends javax.swing.JPanel {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("Dirección");
+        lblSoli1.setText("Dirección");
         lblSoli1.setVisible(true);
         
         txtSoli1.setText("");
         txtSoli1.setVisible(true);
         
-        jLabel2.setText("Dirección");
+        lblSoli2.setText("Teléfono");
         lblSoli2.setVisible(true);
         
         txtSoli2.setText("");
@@ -153,6 +153,11 @@ public class FormaDeRecibido extends javax.swing.JPanel {
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
+        
+        lblSoli1.setVisible(false);
+        txtSoli1.setVisible(false);
+        lblSoli2.setVisible(false);
+        txtSoli2.setVisible(false);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed

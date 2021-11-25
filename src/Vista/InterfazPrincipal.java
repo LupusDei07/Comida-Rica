@@ -429,14 +429,13 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-        if (tPedido.isShowing()){
-        tPedido.setVisible(false);
-        }else{
+
+        
+        
+            tPedido.mostrar();
             contenedor.add(tPedido);
             tPedido.setVisible(true);
             
-        }  
         
         
         
