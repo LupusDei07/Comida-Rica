@@ -19,13 +19,14 @@ import javax.swing.JOptionPane;
 public class EditarItemInventario extends javax.swing.JPanel {
     Productos producto=null;
     int index =-1;
-    String fileName="";
+    String fileName=null;
     
     /**
      * Creates new form EditarItemInventario
      */
     public EditarItemInventario() {
         initComponents();
+        ocultarErrores();
     }
 
     /**
@@ -36,6 +37,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
     private void initComponents() {
 
         btnGrupoProducto = new javax.swing.ButtonGroup();
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,6 +52,14 @@ public class EditarItemInventario extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         rbtnComida = new javax.swing.JRadioButton();
         rbtnBebida = new javax.swing.JRadioButton();
+        lblErrorCant = new javax.swing.JLabel();
+        lblErrorCalorias = new javax.swing.JLabel();
+        lblErrorCosto = new javax.swing.JLabel();
+        lblErrorRbtn = new javax.swing.JLabel();
+        lblErrorNombre = new javax.swing.JLabel();
+
+        jLabel9.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel9.setText("Debe de seleccionar una opción");
 
         setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,6 +154,31 @@ public class EditarItemInventario extends javax.swing.JPanel {
         btnGrupoProducto.add(rbtnBebida);
         rbtnBebida.setText("Bebida");
         add(rbtnBebida, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 90, -1));
+
+        lblErrorCant.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblErrorCant.setForeground(new java.awt.Color(255, 51, 51));
+        lblErrorCant.setText("Debe ser un número mayor a 0");
+        add(lblErrorCant, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 180, -1));
+
+        lblErrorCalorias.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblErrorCalorias.setForeground(new java.awt.Color(255, 51, 51));
+        lblErrorCalorias.setText("Debe ser un número mayor a 0");
+        add(lblErrorCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 190, -1));
+
+        lblErrorCosto.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblErrorCosto.setForeground(new java.awt.Color(255, 51, 51));
+        lblErrorCosto.setText("Debe ser un número mayor a 0");
+        add(lblErrorCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 180, -1));
+
+        lblErrorRbtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblErrorRbtn.setForeground(new java.awt.Color(255, 51, 51));
+        lblErrorRbtn.setText("Debe de seleccionar una opción");
+        add(lblErrorRbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 200, -1));
+
+        lblErrorNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblErrorNombre.setForeground(new java.awt.Color(255, 51, 51));
+        lblErrorNombre.setText("Nombre no puede ser vacío");
+        add(lblErrorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     public void ingresarDatosProducto(){
@@ -170,6 +205,11 @@ public class EditarItemInventario extends javax.swing.JPanel {
         
     }
     
+    public void activarBotones(){
+        rbtnBebida.setVisible(true);
+        rbtnComida.setVisible(true);
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         JFileChooser chooser = new JFileChooser();
@@ -192,12 +232,20 @@ public class EditarItemInventario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void ocultarErrores(){
+        lblErrorCalorias.setVisible(false);
+        lblErrorCant.setVisible(false);
+        lblErrorCosto.setVisible(false);
+        lblErrorNombre.setVisible(false);
+        lblErrorRbtn.setVisible(false);
+    }
+    
     public void limpiarCampos(){
         txtCalorias.setText("");
         txtCantidad.setText("");
         txtCosto1.setText("");
         txtNombre.setText("");
-        fileName="";
+        fileName=null;
         index=-1;
         producto=null;
         
@@ -209,36 +257,112 @@ public class EditarItemInventario extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         limpiarCampos();
+        ocultarErrores();
         this.setVisible(false);
         InterfazPrincipal.editMenu.setVisible(true);
         InterfazPrincipal.contenedor.add(InterfazPrincipal.editMenu);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        if(producto==null){
-
-            if(rbtnBebida.isSelected()){
-                producto =new Modelo.Bebida(txtNombre.getText(),Double.parseDouble(txtCosto1.getText()),Double.parseDouble(txtCalorias.getText()),
-                        Double.parseDouble(txtCantidad.getText()),fileName);
-            }
-            else{
-                producto =new Modelo.Comida(txtNombre.getText(),Double.parseDouble(txtCosto1.getText()),Double.parseDouble(txtCalorias.getText()),
-                        Double.parseDouble(txtCantidad.getText()),fileName);
-            }
-            InterfazPrincipal.gestorPro.agregarProducto(producto);
-            System.out.println(InterfazPrincipal.gestorPro.obtenerLista());
+    private boolean validarCampos(){
+        if(txtNombre.getText().isEmpty()){
+            lblErrorNombre.setVisible(true);
         }
         else{
-           InterfazPrincipal.gestorPro.modificarProducto(index, txtNombre.getText(), Double.parseDouble(txtCosto1.getText()), Double.parseDouble(txtCantidad.getText()),
-                   Double.parseDouble(txtCalorias.getText()), fileName);
-        } 
-        InterfazPrincipal.gestorPro.guardarArchivo(InterfazPrincipal.gestorPro.obtenerLista());
-        InterfazPrincipal.gestorPro.leerArchivo();
-        System.out.println(InterfazPrincipal.gestorPro.obtenerLista());
-        InterfazPrincipal.editMenu.fillListBox();
-        limpiarCampos();
-        btnGrupoProducto.clearSelection();
+            lblErrorNombre.setVisible(false);
+        }
+        if(txtCosto1.getText().isEmpty()){
+            lblErrorCosto.setVisible(true);
+        }
+        else{
+            try {
+                if(Double.parseDouble(txtCosto1.getText())>0){
+                    lblErrorCosto.setVisible(false);
+                }
+                else{
+                    lblErrorCosto.setVisible(true);
+                }
+            } catch (Exception e) {
+                lblErrorCosto.setVisible(true);
+            }
+        }
+        if(txtCantidad.getText().isEmpty()){
+            lblErrorCant.setVisible(true);
+        }
+        else{
+            try {
+                if(Double.parseDouble(txtCantidad.getText())>0){
+                    lblErrorCant.setVisible(false);
+                }
+                else{
+                    lblErrorCant.setVisible(true);
+                }
+            } catch (Exception e) {
+                lblErrorCant.setVisible(true);
+            }
+        }
+        if(txtCalorias.getText().isEmpty()){
+            lblErrorCalorias.setVisible(true);
+        }
+        else{
+            try {
+                if(Double.parseDouble(txtCalorias.getText())>0){
+                    lblErrorCalorias.setVisible(false);
+                }
+                else{
+                    lblErrorCalorias.setVisible(true);
+                }
+            } catch (Exception e) {
+                lblErrorCalorias.setVisible(true);
+            }
+        }
+        
+        if(producto==null){
+            if(!rbtnBebida.isSelected()&& !rbtnComida.isSelected()){
+                lblErrorRbtn.setVisible(true);
+            }
+            else{
+                lblErrorRbtn.setVisible(false);
+            }
+        }
+        
+        
+        if(!lblErrorNombre.isVisible()&&!lblErrorCosto.isVisible()&&!lblErrorCant.isVisible()&&!lblErrorCalorias.isVisible()&&!lblErrorRbtn.isVisible()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if(validarCampos()){
+             if(producto==null){
+                if(rbtnBebida.isSelected()){
+                    producto =new Modelo.Bebida(txtNombre.getText(),Double.parseDouble(txtCosto1.getText()),Double.parseDouble(txtCalorias.getText()),
+                            Double.parseDouble(txtCantidad.getText()),fileName);
+                }
+                else{
+                    producto =new Modelo.Comida(txtNombre.getText(),Double.parseDouble(txtCosto1.getText()),Double.parseDouble(txtCalorias.getText()),
+                            Double.parseDouble(txtCantidad.getText()),fileName);
+                }
+                InterfazPrincipal.gestorPro.agregarProducto(producto);
+                System.out.println(InterfazPrincipal.gestorPro.obtenerLista());
+            }
+            else{
+               InterfazPrincipal.gestorPro.modificarProducto(index, txtNombre.getText(), Double.parseDouble(txtCosto1.getText()), Double.parseDouble(txtCantidad.getText()),
+                       Double.parseDouble(txtCalorias.getText()), fileName);
+            } 
+             JOptionPane.showMessageDialog(null,"Logrado con éxito.");
+            InterfazPrincipal.gestorPro.guardarArchivo(InterfazPrincipal.gestorPro.obtenerLista());
+            InterfazPrincipal.gestorPro.leerArchivo();
+            InterfazPrincipal.editMenu.fillListBox();
+            limpiarCampos();
+            btnGrupoProducto.clearSelection();
+        }
+        
+       
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
@@ -271,6 +395,12 @@ public class EditarItemInventario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblErrorCalorias;
+    private javax.swing.JLabel lblErrorCant;
+    private javax.swing.JLabel lblErrorCosto;
+    private javax.swing.JLabel lblErrorNombre;
+    private javax.swing.JLabel lblErrorRbtn;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JRadioButton rbtnBebida;
     private javax.swing.JRadioButton rbtnComida;
