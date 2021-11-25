@@ -119,7 +119,7 @@ public class ComidaRica {
         GestorProductos gestor= new GestorProductos();
         gestor.leerArchivo();
         System.out.println(gestor.obtenerLista());
-        System.out.println(gestor.obtenerListaTipoProducto("Comida"));
+        //System.out.println(gestor.obtenerListaTipoProducto("Comida"));
         System.out.println(gestor.obtenerListaTipoProducto("Bebida"));
 
 //          String prueba="1";
