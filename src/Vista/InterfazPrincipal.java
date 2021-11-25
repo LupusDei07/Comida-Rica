@@ -26,8 +26,6 @@ import Modelo.TipoAccion;
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
     
     static boolean isAdmin= true;
-    static int costoExpress= 100;
-    
     static CarritoPedido carritoP = new CarritoPedido();
     static GestorPedidos gestorP= new GestorPedidos();
     static GestorProductos gestorPro= new GestorProductos();
@@ -51,17 +49,6 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     TipoPedido tPedido= new TipoPedido();
     Top10 t10=new Top10();
     
-
-    
-
-    public static int getCostoExpress() {
-        return costoExpress;
-    }
-
-    public static void setCostoExpress(int costoExpress) {
-        InterfazPrincipal.costoExpress = costoExpress;
-    }
-
     
     
     public static boolean getIsAdmin() {

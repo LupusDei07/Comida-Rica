@@ -84,7 +84,7 @@ public class TipoPedido extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void mostrar() {
-        
+        /*
          ArrayList<CarritoPedido> lista=InterfazPrincipal.gestorP.getListaPedidos();
         String matris[][]= new String[3][2];
         
@@ -112,6 +112,6 @@ public class TipoPedido extends javax.swing.JPanel {
                 "Tipo Pedido","Cantidad"
             }
         ));
-        
+     */   
     }
 }

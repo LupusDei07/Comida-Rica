@@ -21,7 +21,7 @@ public class ControladorServidor {
     private Administrador admUsr = new Administrador();
     private GestorProductos listaProductos = new GestorProductos();
     private GestorPedidos listaPedidos = new GestorPedidos();
-
+    private int costoExpress=100;
 
     public ControladorServidor() {
        listaProductos.leerArchivo();
@@ -37,7 +37,6 @@ public class ControladorServidor {
                 
                 
                  String credenciales = (String) peticionRecibida.getDatosEntrada();
-                 
                  if(credenciales.equals("-")){
                  peticionRecibida.setDatosSalida(null);
                  }else{
@@ -141,6 +140,14 @@ public class ControladorServidor {
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("bebidas"));
                 break;
               
+            case OBTENER_COSTO_EXPRESS:
+                peticionRecibida.setDatosSalida(costoExpress);
+                break;
+                
+            case ACTUALIZAR_COSTO_EXPRESS:
+                int costo= (int) peticionRecibida.getDatosEntrada();
+                this.costoExpress=costo;
+                break;
 
         }
         return peticionRecibida;
