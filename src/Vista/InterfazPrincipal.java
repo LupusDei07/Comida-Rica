@@ -50,7 +50,6 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     TipoPedido tPedido= new TipoPedido();
     Top10 t10=new Top10();
     
-    
 
     
 
