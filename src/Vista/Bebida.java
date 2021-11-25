@@ -175,6 +175,14 @@ public class Bebida extends javax.swing.JPanel {
         this.setVisible(false);
         InterfazPrincipal.menu.setVisible(true);
         InterfazPrincipal.contenedor.add(InterfazPrincipal.menu);
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");       
+        jTextField5.setText("");
+         lblImagen.setIcon(null);
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
