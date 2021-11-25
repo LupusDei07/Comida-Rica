@@ -17,17 +17,26 @@ public class Pedido {
     protected String nombreProducto;
     
     
-    
-    
+    /**
+     * Método constructor vacío
+     */
     public Pedido() {
     }
 
+    /**
+     * Método constructor que recibe:
+     * @param cantidad
+     * @param costo
+     * @param producto 
+     * y de un solo se realiza la asignación de datos.
+     */
     public Pedido(int cantidad, double costo, String producto) {
         this.cantidad = cantidad;
         this.costo = costo;
         this.nombreProducto = producto;
     }
     
+    //Getters y setters
     public int getCantidad() {
         return cantidad;
     }
@@ -51,12 +60,20 @@ public class Pedido {
     public void setNombreProducto(String producto) {
         this.nombreProducto = producto;
     }
-
+    
+    /**
+     * Método toString
+     * @return 
+     */
     @Override
     public String toString() {
         return "Pedido{" + "cantidad=" + cantidad + ", costo=" + costo + ", nombreProducto=" + nombreProducto + '}';
     }
 
+    /**
+     * Valor del hashCode
+     * @return 
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -65,7 +82,12 @@ public class Pedido {
         hash = 29 * hash + Objects.hashCode(this.nombreProducto);
         return hash;
     }
-
+    
+    /**
+     * Método para comparar.
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
