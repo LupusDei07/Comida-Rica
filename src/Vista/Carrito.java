@@ -20,6 +20,9 @@ public class Carrito extends javax.swing.JPanel {
      */
     public Carrito() {
         initComponents();
+        
+        
+        
     }
     
     public void mostrar(int cont){

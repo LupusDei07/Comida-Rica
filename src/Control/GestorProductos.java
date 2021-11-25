@@ -97,7 +97,7 @@ public class GestorProductos {
             if(tipo.equals("Comida")&&listaProductos.get(contador).getClass().equals(comida.getClass())){
                 producto.add(listaProductos.get(contador));
             }
-            else{
+            else if(tipo.equals("Bebida")&&listaProductos.get(contador).getClass().equals(comida.getClass())){
                 producto.add(listaProductos.get(contador));
             }
         }
