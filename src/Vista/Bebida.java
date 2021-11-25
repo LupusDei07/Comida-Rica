@@ -75,6 +75,11 @@ public class Bebida extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -160,6 +165,11 @@ public class Bebida extends javax.swing.JPanel {
         jPanel2.add(jButton3, gridBagConstraints);
 
         jTextField2.setEditable(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
@@ -232,6 +242,32 @@ public class Bebida extends javax.swing.JPanel {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        // TODO add your handling code here:
+        
+        String temp= (String)jList1.getSelectedValue();
+        
+        int cont=0;
+        String name="";
+        while (temp!= name){
+            name=InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getNombre();
+            cont++;
+        }
+        jTextField1.setText(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getImagen());
+        jTextField2.setText(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getNombre());
+        jTextField3.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getCantidadLiquido()));
+        jTextField4.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getCaloria()));       
+        jTextField5.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getCosto()));
+        
+        
+        
+        
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
