@@ -61,7 +61,11 @@ public class ControladorServidor {
                 break;
             case AGREGAR_CARRITO:
                 this.listaPedidos.agregarCarrito((CarritoPedido)peticionRecibida.getDatosEntrada());
+<<<<<<< HEAD
                 System.out.println("mola");
+=======
+                
+>>>>>>> 0fe70c9a4b94b2663860fb6fbc63baa4de530417
                 break;         
             case AGREGAR_PRODUCTO_BEBIDA://Agregar producto
                 //Bebida

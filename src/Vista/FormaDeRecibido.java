@@ -240,6 +240,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
+<<<<<<< HEAD
         if(jRadioButton1.isSelected()){
             
             InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.EXPRESS);
@@ -266,6 +267,64 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         buttonGroup1.clearSelection();
         this.setVisible(false);
 
+=======
+        if(!jRadioButton1.isSelected()&&!jRadioButton2.isSelected()&&!jRadioButton3.isSelected()){
+            rbtnError.setVisible(true);
+        }
+        else if(jRadioButton3.isSelected()){
+            if(txtSoli1.getText().isEmpty()){
+                txtError1.setVisible(true);
+            }
+            else{
+                txtError1.setVisible(false);
+                InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.PARA_LLEVAR);
+                InterfazPrincipal.carritoP.setDireccion(txtSoli1.getText());
+                InterfazPrincipal.carritoP.setTelefono(Integer.parseInt(txtSoli2.getText()));
+            }  
+        }
+        else if(jRadioButton2.isSelected()){
+            InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.COMER_AHI);
+        }
+        else if(jRadioButton1.isSelected()){
+            if(txtSoli1.getText().isEmpty()){
+                txtError1.setVisible(true);
+            }
+            else{
+                txtError1.setVisible(false);
+            }
+            
+            if(txtSoli2.getText().isEmpty()){
+                txtError2.setVisible(true);
+            }
+            else{
+                txtError2.setVisible(false);
+            }
+            if(!txtError1.isVisible()&&!txtError2.isVisible()){
+                InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.EXPRESS);
+                InterfazPrincipal.carritoP.setNombre(txtSoli1.getText());
+            }
+        }
+        
+        if(!rbtnError.isVisible()&&!txtError1.isVisible()&&!txtError2.isVisible()){
+
+            InterfazPrincipal.gestorP.agregarCarrito(InterfazPrincipal.carritoP);
+            
+            Peticion pedicionAgregarCarrito= new Peticion(TipoAccion.AGREGAR_CARRITO,InterfazPrincipal.carritoP);
+            Client conexion = new Client(pedicionAgregarCarrito);
+            
+            
+            
+            InterfazPrincipal.carritoP.eliminar();
+            InterfazPrincipal.nuevoCarritoP();
+            JOptionPane.showMessageDialog(null,"Pedido finalizado");
+            ocultarEtiquetas();
+            
+            InterfazPrincipal.pActuales.fillListBox();
+            buttonGroup1.clearSelection();
+            this.setVisible(false);
+        }
+        
+>>>>>>> 0fe70c9a4b94b2663860fb6fbc63baa4de530417
         
 
                 

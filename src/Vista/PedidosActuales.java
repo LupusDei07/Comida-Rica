@@ -114,6 +114,7 @@ public class PedidosActuales extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void fillListBox() {
+<<<<<<< HEAD
         
         
         
@@ -123,6 +124,19 @@ public class PedidosActuales extends javax.swing.JPanel {
             }
             jList1.setModel(m);
         
+=======
+        
+        
+        
+        l= actualizarPedidos();
+        if(l!=null){
+            for (int i = 0; i < l.size(); i++) {
+                m.addElement(l.get(i));  
+            }
+            jList1.setModel(m);
+        }
+        
+>>>>>>> 0fe70c9a4b94b2663860fb6fbc63baa4de530417
         
     }
 }
