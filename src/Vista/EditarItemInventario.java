@@ -38,7 +38,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
 
         btnGrupoProducto = new javax.swing.ButtonGroup();
         jLabel9 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -57,6 +57,8 @@ public class EditarItemInventario extends javax.swing.JPanel {
         lblErrorCosto = new javax.swing.JLabel();
         lblErrorRbtn = new javax.swing.JLabel();
         lblErrorNombre = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel9.setForeground(new java.awt.Color(255, 51, 51));
         jLabel9.setText("Debe de seleccionar una opción");
@@ -64,10 +66,9 @@ public class EditarItemInventario extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nombre");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 18));
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 120, 18));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,6 +180,16 @@ public class EditarItemInventario extends javax.swing.JPanel {
         lblErrorNombre.setForeground(new java.awt.Color(255, 51, 51));
         lblErrorNombre.setText("Nombre no puede ser vacío");
         add(lblErrorNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 160, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Nombre");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 18));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Tipo Producto");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     public void ingresarDatosProducto(){
@@ -191,9 +202,11 @@ public class EditarItemInventario extends javax.swing.JPanel {
         
         if(producto.getClass().equals(comida.getClass())){
             txtCantidad.setText(Double.toString(producto.getRacion()));
+            lblTitulo.setText("Comida");
         }
         else{
             txtCantidad.setText(Double.toString(producto.getCantidadLiquido()));
+            lblTitulo.setText("Bebida");
         }
         
         fileName=producto.getImagen();
@@ -391,10 +404,11 @@ public class EditarItemInventario extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblErrorCalorias;
     private javax.swing.JLabel lblErrorCant;
@@ -402,6 +416,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
     private javax.swing.JLabel lblErrorNombre;
     private javax.swing.JLabel lblErrorRbtn;
     private javax.swing.JLabel lblImagen;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JRadioButton rbtnBebida;
     private javax.swing.JRadioButton rbtnComida;
     private javax.swing.JTextField txtCalorias;
