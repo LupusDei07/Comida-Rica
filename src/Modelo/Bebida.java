@@ -136,7 +136,11 @@ public class Bebida extends Productos{
     @Override
     public void racion(double racion) {
     }
-
+    
+    /**
+     * Funcionamiento: Retorna de manera más detallada los datos que tiene almacenado.
+     * @return 
+     */
     @Override
     public String toString() {
         return "Bebida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" cantidadLiquido=" + cantidadLiquido + 

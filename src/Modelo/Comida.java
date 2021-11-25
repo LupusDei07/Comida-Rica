@@ -102,6 +102,10 @@ public class Comida extends Productos{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * Funcionamiento: Retorna de manera más detallada los datos que tiene almacenado.
+     * @return 
+     */
     @Override
     public String toString() {
         return "Comida{" + "nombre="+super.getNombre()+" costo="+super.getCosto()+" calorias"+super.getCaloria()+" racion=" + racion +" cantidad veces pedido="+

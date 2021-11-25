@@ -62,7 +62,7 @@ public class Pedido {
     }
     
     /**
-     * Método toString
+     * Funcionamiento: Retorna de manera más detallada los datos que tiene almacenado.
      * @return 
      */
     @Override

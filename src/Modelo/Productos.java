@@ -19,10 +19,16 @@ public abstract class Productos implements IRacion, ICantidad, Serializable,Comp
     protected String imagen;
     protected int cantVecesPedida;
     
+    /**
+     * Método constructor vacío
+     */
     public Productos(){
     }
     
-
+    /**
+     * Getters y setters
+     * 
+     */
     public String getNombre() {
         return nombre;
     }
@@ -72,11 +78,18 @@ public abstract class Productos implements IRacion, ICantidad, Serializable,Comp
         return 1;
     }
     
+    /**
+     * Funcionamiento: Retorna de manera más detallada los datos que tiene almacenado.
+     * @return 
+     */
     @Override
     public String toString() {
         return "Productos{" + "nombre=" + nombre + ", costo=" + costo + ", caloria=" + caloria + ", imagen=" + imagen + ", cantVecesPedida=" + cantVecesPedida + '}';
     }
-    
+    /**
+     * Valor del hashCode
+     * @return 
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -86,6 +99,11 @@ public abstract class Productos implements IRacion, ICantidad, Serializable,Comp
         return hash;
     }
 
+    /**
+     * Comparacion
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

@@ -16,15 +16,27 @@ public class Peticion implements Serializable{
     private Object datosEntrada;
     private Object datosSalida;
 
+    /**
+     * Método constructor vacío
+     */
     public Peticion() {
     }
 
-    
+    /**
+     * Método constructor que recibe:
+     * @param accion
+     * @param datosEntrada 
+     * y de un solo se realiza la asignación de datos.
+     */
     public Peticion(TipoAccion accion, Object datosEntrada) {
         this.accion = accion;
         this.datosEntrada = datosEntrada;
     }
 
+    /**
+     * Gettes y setters
+     * 
+     */
     public TipoAccion getAccion() {
         return accion;
     }
@@ -49,6 +61,10 @@ public class Peticion implements Serializable{
         this.datosSalida = datosSalida;
     }
 
+    /**
+     * Funcionamiento: Retorna de manera más detallada los datos que tiene almacenado.
+     * @return 
+     */
     @Override
     public String toString() {
         return "Peticion{" + "accion=" + accion + ", datosEntrada=" + datosEntrada + ", datosSalida=" + datosSalida + '}';
