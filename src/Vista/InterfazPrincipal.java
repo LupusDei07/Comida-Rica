@@ -43,6 +43,7 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     static Carrito carrito=new Carrito();
     static PedidosActuales pActuales =new PedidosActuales();
     static EditarItemInventario editItem = new EditarItemInventario();
+    static FormaDeRecibido formaRecibido = new FormaDeRecibido();
 
     
 
