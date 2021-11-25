@@ -240,7 +240,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-<<<<<<< HEAD
+
         if(jRadioButton1.isSelected()){
             
             InterfazPrincipal.carritoP.setTipoPedido(Modelo.TipoPedido.EXPRESS);
@@ -267,7 +267,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         buttonGroup1.clearSelection();
         this.setVisible(false);
 
-=======
+
         if(!jRadioButton1.isSelected()&&!jRadioButton2.isSelected()&&!jRadioButton3.isSelected()){
             rbtnError.setVisible(true);
         }
@@ -324,7 +324,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
             this.setVisible(false);
         }
         
->>>>>>> 0fe70c9a4b94b2663860fb6fbc63baa4de530417
+
         
 
                 
