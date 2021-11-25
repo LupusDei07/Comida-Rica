@@ -25,7 +25,7 @@ import Modelo.TipoAccion;
  */
 public class InterfazPrincipal extends javax.swing.JFrame implements ActionListener{
     
-    static boolean isAdmin= true;
+    static boolean isAdmin= false;
     static CarritoPedido carritoP = new CarritoPedido();
     static GestorPedidos gestorP= new GestorPedidos();
     static GestorProductos gestorPro= new GestorProductos();
