@@ -170,6 +170,7 @@ public class Bebida extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex());
         for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
             if(pedido.getNombreProducto().equals(producto.getNombre())){
@@ -184,6 +185,13 @@ public class Bebida extends javax.swing.JPanel {
                 InterfazPrincipal.carritoP.agregar(nuevoPedido);
             }
         }
+=======
+        
+       // InterfazPrincipal.carritoP.agregar(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex()));
+        
+        
+        
+>>>>>>> 292dd2247bc3b255268387c1475b303ad95b098b
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
