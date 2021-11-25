@@ -28,14 +28,13 @@ public class Carrito extends javax.swing.JPanel {
     
     public void mostrar(){
         ArrayList<Pedido> lista=InterfazPrincipal.carritoP.getListaPedidos();
-        
-        
-        String matris[][]= new String[lista.size()][1];
+//        System.out.println(InterfazPrincipal.carritoP.getListaPedidos().get(0).toString());
+       
+        String matris[][]= new String[lista.size()][2];
         
         
         int c=0;
-       
-  
+
         for (int j = 0; j < lista.size(); j++) {    
 
 

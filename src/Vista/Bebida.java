@@ -170,28 +170,38 @@ public class Bebida extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
+
         Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex());
-        for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
-            if(pedido.getNombreProducto().equals(producto.getNombre())){
-                pedido.setCantidad(pedido.getCantidad()+1);
-                pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+        if(InterfazPrincipal.carritoP.getListaPedidos().isEmpty()){
+            
+            Pedido nuevoPedido = new Pedido();
+            nuevoPedido.setNombreProducto(producto.getNombre());
+            nuevoPedido.setCantidad(1);
+            nuevoPedido.setCosto(producto.getCosto());
+            InterfazPrincipal.carritoP.agregar(nuevoPedido);
+
+        }else{
+            for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
+                if(pedido.getNombreProducto().equals(producto.getNombre())){
+
+                   
+                    pedido.setCantidad(pedido.getCantidad()+1);
+                    pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+                }
             }
-            else{
-                Pedido nuevoPedido = new Pedido();
-                nuevoPedido.setNombreProducto(producto.getNombre());
-                nuevoPedido.setCantidad(1);
-                nuevoPedido.setCosto(producto.getCosto());
-                InterfazPrincipal.carritoP.agregar(nuevoPedido);
-            }
+            
+            Pedido nuevoPedido = new Pedido();
+            nuevoPedido.setNombreProducto(producto.getNombre());
+            nuevoPedido.setCantidad(1);
+            nuevoPedido.setCosto(producto.getCosto());
+            InterfazPrincipal.carritoP.agregar(nuevoPedido);
         }
-=======
+
         
        // InterfazPrincipal.carritoP.agregar(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex()));
         
         
-        
->>>>>>> 292dd2247bc3b255268387c1475b303ad95b098b
+   
         
     }//GEN-LAST:event_jButton3ActionPerformed
 

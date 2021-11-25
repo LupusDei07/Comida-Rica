@@ -94,6 +94,10 @@ public class CostoExpress extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+        
+        
+        
+        
         InterfazPrincipal.setCostoExpress(Integer.parseInt(jTextField2.getText()));
         this.setVisible(false);
         jTextField2.setText("");

@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Pedido;
 import Modelo.Productos;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
@@ -160,6 +161,40 @@ public class Comida extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex());
+        
+        
+        if(InterfazPrincipal.carritoP.getListaPedidos().isEmpty()){
+           
+            Pedido nuevoPedido = new Pedido();
+            nuevoPedido.setNombreProducto(producto.getNombre());
+            nuevoPedido.setCantidad(1);
+            nuevoPedido.setCosto(producto.getCosto());
+            InterfazPrincipal.carritoP.agregar(nuevoPedido);
+
+        }else{
+            for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
+                if(pedido.getNombreProducto().equals(producto.getNombre())){
+
+                    
+                    pedido.setCantidad(pedido.getCantidad()+1);
+                    pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+                }
+            }
+            
+            Pedido nuevoPedido = new Pedido();
+            nuevoPedido.setNombreProducto(producto.getNombre());
+            nuevoPedido.setCantidad(1);
+            nuevoPedido.setCosto(producto.getCosto());
+            InterfazPrincipal.carritoP.agregar(nuevoPedido);
+        }
+        
+            
+      
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked

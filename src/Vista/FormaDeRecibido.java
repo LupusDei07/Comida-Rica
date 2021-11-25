@@ -43,6 +43,7 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Express");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +52,11 @@ public class FormaDeRecibido extends javax.swing.JPanel {
         });
         add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Comer Aquí");
         add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
+        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Para llevar");
         add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
