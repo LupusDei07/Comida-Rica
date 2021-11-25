@@ -102,6 +102,7 @@ public class PedidosActuales extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        l= InterfazPrincipal.getGestorP().getListaPedidos();
         int fila =jList1.getSelectedIndex();
         if (fila>=0){
         
@@ -109,7 +110,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         
         }else{
         
-        JOptionPane.showMessageDialog(jButton1, fila);
+        JOptionPane.showMessageDialog(null, "Seleccionar Fila");
         }
         
         InterfazPrincipal.getGestorP().setListaPedidos(l);
