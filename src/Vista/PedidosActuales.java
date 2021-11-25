@@ -79,7 +79,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(63, 40, 75, 0);
         add(jButton2, gridBagConstraints);
 
-        jButton1.setText("Eliminar Pedido");
+        jButton1.setText("Finalizar Pedido");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

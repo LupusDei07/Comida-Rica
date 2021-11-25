@@ -94,6 +94,7 @@ public class Menu extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         InterfazPrincipal.runCarrito();
+        InterfazPrincipal.carrito.mostrar();
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -109,6 +110,7 @@ public class Menu extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         InterfazPrincipal.runComida();
+        InterfazPrincipal.comida.cargarComida();
         
         
     }//GEN-LAST:event_jButton3ActionPerformed

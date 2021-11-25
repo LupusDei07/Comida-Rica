@@ -6,6 +6,7 @@
 package Vista;
 
 import Control.CarritoPedido;
+import Modelo.Pedido;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,21 +23,21 @@ public class Carrito extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void mostrar(int cont){
-        ArrayList<CarritoPedido> lista=InterfazPrincipal.gestorP.getListaPedidos();
+    public void mostrar(){
+        ArrayList<Pedido> lista=InterfazPrincipal.carritoP.getListaPedidos();
         
         
-        String matris[][]= new String[lista.get(cont).getListaPedidos().size()][1];
+        String matris[][]= new String[lista.size()][1];
         
         
         int c=0;
        
   
-        for (int j = 0; j < lista.get(j).getListaPedidos().size(); j++) {    
+        for (int j = 0; j < lista.size(); j++) {    
 
 
-            matris[c][0]=Integer.toString(lista.get(j).getListaPedidos().get(j).getCantidad());
-            matris[c][1]=lista.get(j).getListaPedidos().get(j).getNombre();
+            matris[c][0]=Integer.toString(lista.get(j).getCantidad());
+            matris[c][1]=lista.get(j).getNombreProducto();
 
    
         }
@@ -117,6 +118,11 @@ public class Carrito extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 550, 250));
 
         jButton3.setText("Hacer Pedido");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -131,6 +137,17 @@ public class Carrito extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        //InterfazPrincipal.gestorP.agregarCarrito(InterfazPrincipal.carritoP);
+        
+        
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

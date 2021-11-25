@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import Modelo.Productos;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Usuario
@@ -16,6 +20,7 @@ public class Comida extends javax.swing.JPanel {
      */
     public Comida() {
         initComponents();
+        cargarComida();
     }
 
     /**
@@ -237,4 +242,24 @@ public class Comida extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+
+    public void cargarComida() {
+       
+        
+        
+        InterfazPrincipal.getGestorPro().leerArchivo();
+        DefaultListModel m = new DefaultListModel();
+        
+        ArrayList<Productos> l= new ArrayList<Productos>();
+        l= InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida");
+        
+        for (int i = 0; i < l.size(); i++) {
+            m.addElement(l.get(i).getNombre());  
+        }
+        jList1.setModel(m);
+    
+    
+        
+        
+    }
 }
