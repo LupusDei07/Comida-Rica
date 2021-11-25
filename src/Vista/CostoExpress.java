@@ -131,7 +131,7 @@ public class CostoExpress extends javax.swing.JPanel {
         Peticion peticionObtener = new Peticion(TipoAccion.OBTENER_COSTO_EXPRESS,null);
         
         Client conexion = new Client(peticionObtener);
-        jTextArea1.setText(Integer.toString((int)conexion.getRespuestaServer()));
+        jTextArea1.setText(Double.toString((double)conexion.getRespuestaServer()));
         
         
     }

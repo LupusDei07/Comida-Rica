@@ -21,7 +21,7 @@ public class ControladorServidor {
     private Administrador admUsr = new Administrador();
     private GestorProductos listaProductos = new GestorProductos();
     private GestorPedidos listaPedidos = new GestorPedidos();
-    private int costoExpress=100;
+    private double costoExpress=100;
 
     /**
      *
@@ -60,7 +60,8 @@ public class ControladorServidor {
                 peticionRecibida.setDatosSalida(listaProductos.buscar(index));
                 break;
             case AGREGAR_CARRITO:
-
+                this.listaPedidos.agregarCarrito((CarritoPedido)peticionRecibida.getDatosEntrada());
+                
                 break;         
             case AGREGAR_PRODUCTO_BEBIDA://Agregar producto
                 //Bebida
@@ -111,8 +112,12 @@ public class ControladorServidor {
                 break;
                 
             case ACTUALIZAR_COSTO_EXPRESS://Actualiza costo express
-                int costo= (int) peticionRecibida.getDatosEntrada();
+                double costo= (double) peticionRecibida.getDatosEntrada();
                 this.costoExpress=costo;
+                break;
+            
+            case OBTENER_CARRITOS:
+                peticionRecibida.setDatosSalida(this.listaPedidos);
                 break;
         }
         return peticionRecibida;

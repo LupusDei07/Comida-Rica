@@ -86,28 +86,33 @@ public class ComidaRica {
 //           Collections.sort(prueba);
 //           System.out.println(gestor.obtenerListaOrdenada());
         
-//        GestorPedidos gestor2=new GestorPedidos();   
-//           
-//        CarritoPedido gestor = new CarritoPedido();
-//        Pedido pedido=new Pedido(12, 120, "Pepsi");
-//        gestor.agregar(pedido);
-//        gestor.modificar(2, "Pepsi");
-//        gestor.setTipoPedido(Modelo.TipoPedido.EXPRESS);
+        GestorPedidos gestor2=new GestorPedidos();   
+           
+        CarritoPedido gestor = new CarritoPedido();
+        Pedido pedido=new Pedido(12, 120, "Pepsi");
+        gestor.agregar(pedido);
+        gestor.modificar(2, "Pepsi");
+        gestor.setTipoPedido(Modelo.TipoPedido.EXPRESS);
 //        
-//        
-//        gestor2.agregarCarrito(gestor);
-//        gestor2.actualizarEstadistica(gestor);
-//        CarritoPedido gestor3 = new CarritoPedido();
-//        pedido=new Pedido(12, 120, "Pepsi");
-//        gestor3.agregar(pedido);
-//        pedido=new Pedido(12, 120, "COCA");
-//        gestor3.agregar(pedido);
-//        gestor3.setTipoPedido(Modelo.TipoPedido.COMER_AHI);
-//        
-//        gestor2.agregarCarrito(gestor3);
-//        gestor2.actualizarEstadistica(gestor3);
-//        
-//        ArrayList<CarritoPedido> lista= gestor2.getListaPedidos();
+        
+        gestor2.agregarCarrito(gestor);
+        gestor2.actualizarEstadistica(gestor);
+        CarritoPedido gestor3 = new CarritoPedido();
+        pedido=new Pedido(12, 120, "Pepsi");
+        gestor3.agregar(pedido);
+        pedido=new Pedido(12, 120, "COCA");
+        gestor3.agregar(pedido);
+        gestor3.setTipoPedido(Modelo.TipoPedido.COMER_AHI);
+        
+        gestor2.agregarCarrito(gestor3);
+        gestor2.actualizarEstadistica(gestor3);
+        
+        ArrayList<CarritoPedido> lista= gestor2.getListaPedidos();
+        
+ 
+        
+//        gestor2.leerArchivo();
+//        System.out.println(gestor2.getListaPedidos());
 //        System.out.println(lista.size());
 //        System.out.println(lista.get(0));
 //        System.out.println(lista.get(1));
@@ -116,11 +121,11 @@ public class ComidaRica {
 //        System.out.println(contador[0]+" "+contador[1]+" "+contador[2]);
         //System.out.println(gestor2.getListaPedidos());
         
-        GestorProductos gestor= new GestorProductos();
-        gestor.leerArchivo();
-        System.out.println(gestor.obtenerLista());
-        //System.out.println(gestor.obtenerListaTipoProducto("Comida"));
-        System.out.println(gestor.obtenerListaTipoProducto("Bebida"));
+//        GestorProductos gestor= new GestorProductos();
+//        gestor.leerArchivo();
+//        System.out.println(gestor.obtenerLista());
+//        //System.out.println(gestor.obtenerListaTipoProducto("Comida"));
+//        System.out.println(gestor.obtenerListaTipoProducto("Bebida"));
 
 //          String prueba="1";
 //          System.out.println(Double.parseDouble(prueba));
