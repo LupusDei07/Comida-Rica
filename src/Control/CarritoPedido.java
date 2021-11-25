@@ -17,11 +17,30 @@ import java.util.ArrayList;
  */
 public class CarritoPedido {
     ArrayList<Pedido> listaPedidos;
+
+    /**
+     *
+     */
     protected TipoPedido tipoPedido;
     
+    /**
+     *
+     */
     protected int costoFinal;
+
+    /**
+     *
+     */
     protected String direccion;
+
+    /**
+     *
+     */
     protected String nombre;
+
+    /**
+     *
+     */
     protected int telefono;
 
     /**
@@ -34,34 +53,67 @@ public class CarritoPedido {
     }
     
     //Getters y setters
+
+    /**
+     *
+     * @return
+     */
     public String getDireccion() {
         return direccion;
     }
 
+    /**
+     *
+     * @param direccion
+     */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getTelefono() {
         return telefono;
     }
 
+    /**
+     *
+     * @param telefono
+     */
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCostoFinal() {
         return costoFinal;
     }
 
+    /**
+     *
+     * @param costoFinal
+     */
     public void setCostoFinal(int costoFinal) {
         this.costoFinal = costoFinal;
     }

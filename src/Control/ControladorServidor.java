@@ -13,7 +13,7 @@ import Modelo.Productos;
 import java.util.ArrayList;
 
 /**
- *
+ *Controlador del servidor
  * @author yumii
  */
 public class ControladorServidor {
@@ -23,18 +23,23 @@ public class ControladorServidor {
     private GestorPedidos listaPedidos = new GestorPedidos();
     private int costoExpress=100;
 
+    /**
+     *
+     */
     public ControladorServidor() {
-       listaProductos.leerArchivo();
-        
+       listaProductos.leerArchivo();    
     }
-    
-    //INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
+    //Peticiones del usuario al servidor INGRESAR, VER_PRODUCTOS, MODIFICAR_PRODUCTO,AGREGAR_CARRITO,AGREGAR_PRODUCTO,CERRAR_SESION,TOP_10,MENOS_PEDIDOS,TIPOS_PEDIDOS,REALIZAR_PEDIDO,VER_PEDIDOS
     //VER_BEBIDA,VER_COMIDAS
+
+    /**
+     *Procesa la peticion del cliente
+     * @param peticionRecibida
+     * @return
+     */
     public Peticion procesarPeticion(Peticion peticionRecibida) {
         switch (peticionRecibida.getAccion()){
-            case INGRESAR: 
-                
-                
+            case INGRESAR: //Ingresa el admin                             
                 
                  String credenciales = (String) peticionRecibida.getDatosEntrada();
                  if(credenciales.equals("-")){
@@ -45,88 +50,70 @@ public class ControladorServidor {
                  peticionRecibida.setDatosSalida(admOK);
                  }
                 break;
-            case VER_PRODUCTOS:
+            case VER_PRODUCTOS://ver los productos 
                 listaProductos.leerArchivo();
                 peticionRecibida.setDatosSalida(listaProductos.obtenerLista());
                 break; 
-            case MODIFICAR_PRODUCTO:
+            case MODIFICAR_PRODUCTO://modificar un producto
                 listaProductos.leerArchivo();
                 int index= (int) peticionRecibida.getDatosEntrada();
                 peticionRecibida.setDatosSalida(listaProductos.buscar(index));
                 break;
             case AGREGAR_CARRITO:
-                
-                
-                
-                
-                
-                
-                
+
                 break;         
-            case AGREGAR_PRODUCTO_BEBIDA:
+            case AGREGAR_PRODUCTO_BEBIDA://Agregar producto
                 //Bebida
                 listaProductos.leerArchivo();
                 String partesBebida = (String) peticionRecibida.getDatosEntrada();
                 Bebida newBebida = new Bebida();
                 listaProductos.agregarProducto(newBebida);                      
                 break;
-            case AGREGAR_PRODUCTO_COMIDA:
+            case AGREGAR_PRODUCTO_COMIDA://agregar comida
                 //comida
                 listaProductos.leerArchivo();
                 String partesComida = (String) peticionRecibida.getDatosEntrada();
                 Comida newComida = new Comida();
                 listaProductos.agregarProducto(newComida);                  
                 break; 
-            case ELIMINAR_PRODUCTO:
+            case ELIMINAR_PRODUCTO://eliminar producto
                 listaProductos.leerArchivo();
                 index= (int) peticionRecibida.getDatosEntrada();
                 listaProductos.eliminar(index);
                 
             case CERRAR_SESION:
                 if(peticionRecibida.getDatosEntrada().equals(true))
-                peticionRecibida.setDatosSalida(false);
-                
-                
+                peticionRecibida.setDatosSalida(false);               
                 break;        
             case TOP_10:
-                
-                
-             
-                
-                    break; 
-                
-            case MENOS_PEDIDOS:
-                
+         break;            
+            case MENOS_PEDIDOS:        
                     break;
-
             case TIPOS_PEDIDOS:
                 peticionRecibida.setDatosSalida(listaPedidos.getEstadisticaTipoPedido());
                 break;
             case REALIZAR_PEDIDO:
-                
-                
                 break;
-            case VER_PEDIDOS:
+            case VER_PEDIDOS://ver los pedidos abiertos
                 peticionRecibida.setDatosSalida(listaPedidos.getListaPedidos());
                 break;
-            case VER_COMIDAS:
+            case VER_COMIDAS://ver el menu de comidas
                 listaProductos.leerArchivo();
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("Comida"));
                 break;
-            case VER_BEBIDA:
+            case VER_BEBIDA://ver el menu de bebidas
                 listaProductos.leerArchivo();
                 peticionRecibida.setDatosSalida(listaProductos.obtenerListaTipoProducto("bebidas"));
                 break;
               
-            case OBTENER_COSTO_EXPRESS:
+            case OBTENER_COSTO_EXPRESS://obtiene el costo express
                 peticionRecibida.setDatosSalida(costoExpress);
                 break;
                 
-            case ACTUALIZAR_COSTO_EXPRESS:
+            case ACTUALIZAR_COSTO_EXPRESS://Actualiza costo express
                 int costo= (int) peticionRecibida.getDatosEntrada();
                 this.costoExpress=costo;
                 break;
-
         }
         return peticionRecibida;
     }
