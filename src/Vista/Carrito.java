@@ -138,6 +138,9 @@ public class Carrito extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        InterfazPrincipal.formaRecibido.setVisible(true);
+        InterfazPrincipal.contenedor.add(InterfazPrincipal.formaRecibido);
         
         
         
