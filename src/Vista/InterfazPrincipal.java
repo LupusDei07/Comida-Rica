@@ -33,11 +33,12 @@ public class InterfazPrincipal extends javax.swing.JFrame implements ActionListe
     
     
     static Ingresar ingresar= new Ingresar();
-    static CostoExpress costo= new CostoExpress();
+    
     static EditarMenu editMenu= new EditarMenu();
     static Bebida bebida= new Bebida();
     static Comida comida= new Comida();
     static Menu menu= new Menu();
+    static CostoExpress costo= new CostoExpress();
     static Carrito carrito=new Carrito();
     static PedidosActuales pActuales =new PedidosActuales();
     static EditarItemInventario editItem = new EditarItemInventario();

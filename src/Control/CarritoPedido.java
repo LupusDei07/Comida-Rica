@@ -10,6 +10,7 @@ import Modelo.Pedido;
 import Modelo.TipoPedido;
 import Modelo.TipoPedido;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -26,7 +27,7 @@ public class CarritoPedido {
     /**
      *
      */
-    protected int costoFinal;
+    protected double costoFinal;
 
     /**
      *
@@ -106,7 +107,7 @@ public class CarritoPedido {
      *
      * @return
      */
-    public int getCostoFinal() {
+    public double getCostoFinal() {
         return costoFinal;
     }
 
@@ -114,7 +115,7 @@ public class CarritoPedido {
      *
      * @param costoFinal
      */
-    public void setCostoFinal(int costoFinal) {
+    public void setCostoFinal(double costoFinal) {
         this.costoFinal = costoFinal;
     }
     
@@ -199,4 +200,51 @@ public class CarritoPedido {
     public String toString() {
         return "GestorPedidos{" + "listaPedidos=" + listaPedidos + ", tipoPedido=" + tipoPedido + '}';
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.listaPedidos);
+        hash = 29 * hash + Objects.hashCode(this.tipoPedido);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.costoFinal) ^ (Double.doubleToLongBits(this.costoFinal) >>> 32));
+        hash = 29 * hash + Objects.hashCode(this.direccion);
+        hash = 29 * hash + Objects.hashCode(this.nombre);
+        hash = 29 * hash + this.telefono;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CarritoPedido other = (CarritoPedido) obj;
+        if (Double.doubleToLongBits(this.costoFinal) != Double.doubleToLongBits(other.costoFinal)) {
+            return false;
+        }
+        if (this.telefono != other.telefono) {
+            return false;
+        }
+        if (!Objects.equals(this.direccion, other.direccion)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.listaPedidos, other.listaPedidos)) {
+            return false;
+        }
+        if (this.tipoPedido != other.tipoPedido) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

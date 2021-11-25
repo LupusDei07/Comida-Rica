@@ -203,20 +203,23 @@ public class Bebida extends javax.swing.JPanel {
                 InterfazPrincipal.carritoP.agregar(nuevoPedido);
 
             }else{
+                boolean encontrar=false;
                 for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
                     if(pedido.getNombreProducto().equals(producto.getNombre())){
-
-
                         pedido.setCantidad(pedido.getCantidad()+1);
                         pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+                        encontrar=true;
                     }
                 }
-
-                Pedido nuevoPedido = new Pedido();
-                nuevoPedido.setNombreProducto(producto.getNombre());
-                nuevoPedido.setCantidad(1);
-                nuevoPedido.setCosto(producto.getCosto());
-                InterfazPrincipal.carritoP.agregar(nuevoPedido);
+                
+                if(encontrar==false){
+                    Pedido nuevoPedido = new Pedido();
+                    nuevoPedido.setNombreProducto(producto.getNombre());
+                    nuevoPedido.setCantidad(1);
+                    nuevoPedido.setCosto(producto.getCosto());
+                    InterfazPrincipal.carritoP.agregar(nuevoPedido);
+                }
+                
             }
             JOptionPane.showMessageDialog(null, "Producto añadido al carrito");
         }   

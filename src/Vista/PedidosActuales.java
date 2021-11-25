@@ -7,7 +7,10 @@ package Vista;
 
 import Control.CarritoPedido;
 import Control.GestorPedidos;
+import Modelo.Client;
+import Modelo.Peticion;
 import Modelo.Productos;
+import Modelo.TipoAccion;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -17,7 +20,7 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class PedidosActuales extends javax.swing.JPanel {
-
+    
     /**
      * Creates new form PedidosActuales
      */
@@ -27,8 +30,7 @@ public class PedidosActuales extends javax.swing.JPanel {
     
     public PedidosActuales() {
         initComponents();
-        
-        fillListBox();
+       
     }
 
     /**
@@ -37,7 +39,6 @@ public class PedidosActuales extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -45,7 +46,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(215, 189, 121));
-        setLayout(new java.awt.GridBagLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -54,17 +55,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jList1);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 19;
-        gridBagConstraints.ipady = 127;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(70, 116, 0, 0);
-        add(jScrollPane1, gridBagConstraints);
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 70, 19, 148));
 
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -72,12 +63,7 @@ public class PedidosActuales extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(63, 40, 75, 0);
-        add(jButton2, gridBagConstraints);
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 281, -1, -1));
 
         jButton1.setText("Finalizar Pedido");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,14 +71,15 @@ public class PedidosActuales extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(63, 121, 75, 17);
-        add(jButton1, gridBagConstraints);
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 281, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    public ArrayList<CarritoPedido> actualizarPedidos(){
+        Peticion peticionObtenerCarritos=new Peticion(TipoAccion.OBTENER_CARRITOS,null);
+        Client conexion = new Client(peticionObtenerCarritos);
+        return (ArrayList<CarritoPedido>)conexion.getRespuestaServer();
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
@@ -102,7 +89,7 @@ public class PedidosActuales extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        l= InterfazPrincipal.getGestorP().getListaPedidos();
+        l= actualizarPedidos();
         int fila =jList1.getSelectedIndex();
         if (fila>=0){
         
@@ -126,16 +113,16 @@ public class PedidosActuales extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void fillListBox() {
+    public void fillListBox() {
         
         
         
-        l= InterfazPrincipal.getGestorP().getListaPedidos();
+        l= InterfazPrincipal.gestorP.getListaPedidos();
+            for (int i = 0; i < l.size(); i++) {
+                m.addElement(l.get(i));  
+            }
+            jList1.setModel(m);
         
-        for (int i = 0; i < l.size(); i++) {
-            m.addElement(l.get(i));  
-        }
-        jList1.setModel(m);
         
     }
 }
