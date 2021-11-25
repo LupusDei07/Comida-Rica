@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import Control.CarritoPedido;
+import Modelo.Pedido;
+import java.util.ArrayList;
+
 /**
  *
  * @author Usuario
@@ -16,6 +20,7 @@ public class TipoPedido extends javax.swing.JPanel {
      */
     public TipoPedido() {
         initComponents();
+        mostrar();
     }
 
     /**
@@ -27,9 +32,10 @@ public class TipoPedido extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(215, 189, 121));
-        setLayout(new java.awt.GridBagLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -52,12 +58,60 @@ public class TipoPedido extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new java.awt.GridBagConstraints());
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 510, 400));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton1.setText("Regresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    public void mostrar() {
+        
+         ArrayList<CarritoPedido> lista=InterfazPrincipal.gestorP.getListaPedidos();
+        String matris[][]= new String[3][2];
+        
+            matris[0][0]="Comer ahi";
+            matris[0][1]="Para llevar";
+            matris[0][2]="Express";
+            
+            for( CarritoPedido pedido: lista){
+            
+            InterfazPrincipal.gestorP.actualizarEstadistica(pedido);
+            }
+            
+            
+            
+            matris[1][0]=Integer.toString(InterfazPrincipal.gestorP.getContadorComerAhi());
+            matris[1][1]=Integer.toString(InterfazPrincipal.gestorP.getContadorParaLlevar());
+            matris[1][2]=Integer.toString(InterfazPrincipal.gestorP.getContadorExpress());
+        
+        
+        
+        
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            matris,
+            new String [] {
+                "Tipo Pedido","Cantidad"
+            }
+        ));
+        
+    }
 }
