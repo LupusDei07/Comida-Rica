@@ -134,7 +134,7 @@ public class GestorPedidos {
    }
    
    /**
-     * Funcionammiento: Lee el archivo binario y carga los datos a la listaProductos.
+     * Funcionammiento: Lee el archivo binario y carga los datos a la listaPedidos.
      * Entradas: N/A
      * Salidas: N/A
      */
@@ -156,14 +156,12 @@ public class GestorPedidos {
     }
     
     /**
-     * Funcionamiento:Guarda en un archivo binario la lista de productos
+     * Funcionamiento:Guarda en un archivo binario la lista de pedidos
      * @param lista 
      * Salidas: N/A
      */
-    public void guardarArchivo(ArrayList<Productos> lista){                                                                     
+    public void guardarArchivo(ArrayList<CarritoPedido> lista){                                                                     
         File archivo= new File("C:Archivos//CarritosBD.dat");
-        Productos comida= new Comida();
-        Productos bebida=new Bebida();
         try {
             FileOutputStream fos= new FileOutputStream(archivo);
             ObjectOutputStream oos=new ObjectOutputStream(fos);

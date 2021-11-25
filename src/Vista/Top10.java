@@ -16,7 +16,7 @@ public class Top10 extends javax.swing.JPanel {
      */
     public Top10() {
         initComponents();
-        mostrar();
+        //mostrar();
     }
 
     /**

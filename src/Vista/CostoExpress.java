@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Modelo.Client;
+import Modelo.Peticion;
+import Modelo.TipoAccion;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,7 +48,7 @@ public class CostoExpress extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ventana costo Express");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 0, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +98,11 @@ public class CostoExpress extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        InterfazPrincipal.setCostoExpress(Integer.parseInt(jTextField2.getText()));
+        Peticion peticionActualizar = new Peticion(TipoAccion.ACTUALIZAR_COSTO_EXPRESS,Integer.parseInt(jTextField2.getText()));
+        
+        Client conexion = new Client(peticionActualizar);
+        //conexion.getRespuestaServer()
+       // //InterfazPrincipal.setCostoExpress(Integer.parseInt(jTextField2.getText()));
         JOptionPane.showMessageDialog(null, "Monto Actualizado");
         this.setVisible(false);
         jTextField2.setText("");
@@ -120,6 +127,12 @@ public class CostoExpress extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void actualizar() {
-        jTextArea1.setText(Integer.toString(InterfazPrincipal.getCostoExpress()));
+        //jTextArea1.setText(Integer.toString(InterfazPrincipal.getCostoExpress()));
+        Peticion peticionObtener = new Peticion(TipoAccion.OBTENER_COSTO_EXPRESS,null);
+        
+        Client conexion = new Client(peticionObtener);
+        jTextArea1.setText(Integer.toString((int)conexion.getRespuestaServer()));
+        
+        
     }
 }
