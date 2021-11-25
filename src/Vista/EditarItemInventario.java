@@ -216,7 +216,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void ingresarDatosProducto(){
-        System.out.println(producto.getImagen());
+        btnEliminar.setVisible(true);
         Productos comida=new Modelo.Comida();
         Productos bebida = new Modelo.Bebida();
         txtNombre.setText(producto.getNombre());
