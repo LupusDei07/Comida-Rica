@@ -3,17 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/GestorProductos.java</file>
+            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Modelo/Client.java</file>
             <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/EditarItemInventario.java</file>
             <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/Carrito.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/InterfazPrincipal.java</file>
             <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/Bebida.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/GestorPedidos.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/CarritoPedido.java</file>
+            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/InterfazPrincipal.java</file>
+            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/FormaDeRecibido.java</file>
+            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Modelo/Comida.java</file>
             <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/Comida.java</file>
             <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/EditarMenu.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/ComidaRica.java</file>
-            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Vista/Ingresar.java</file>
+            <file>file:/C:/Users/yumii/Desktop/TEC/2021/2%20Semestre/POO/Proyectos/Proyecto%203/Comida-Rica/src/Control/ControladorServidor.java</file>
         </group>
     </open-files>
 </project-private>

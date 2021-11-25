@@ -11,7 +11,9 @@ package Modelo;
  */
 public class Comida extends Productos{
     double racion;
-    
+    /**
+     * Método Constructor vacío
+     */
     public Comida() {
     }
     

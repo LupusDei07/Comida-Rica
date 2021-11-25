@@ -430,9 +430,12 @@ public class EditarItemInventario extends javax.swing.JPanel {
         // TODO add your handling code here:
         Peticion peticionEliminar = new Peticion(TipoAccion.ELIMINAR_PRODUCTO,index);
         Client conexion = new Client(peticionEliminar);
+        InterfazPrincipal.gestorPro.eliminar(index);
+        InterfazPrincipal.gestorPro.guardarArchivo(InterfazPrincipal.gestorPro.obtenerLista());
+        InterfazPrincipal.gestorPro.leerArchivo();
+        InterfazPrincipal.editMenu.fillListBox();
         JOptionPane.showMessageDialog(null, "Producto eliminado");
         limpiarCampos();
-  
         ocultarErrores();
         this.setVisible(false);
         InterfazPrincipal.editMenu.setVisible(true);
