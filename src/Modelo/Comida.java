@@ -17,12 +17,28 @@ public class Comida extends Productos{
     public Comida() {
     }
     
+    /**
+     * Método constructor que recibe por parámetro:
+     * @param nombre
+     * @param costo
+     * @param caloria 
+     * y realiza la asignación de datos correspondientes de un solo.
+     */
     public Comida(String nombre, double costo, int caloria){
         super.nombre=nombre;
         super.costo=costo;
         super.caloria=caloria;
     }
 
+    /**
+     * Método constructor que recibe por parámetro:
+     * @param nombre
+     * @param costo
+     * @param caloria
+     * @param racion
+     * @param imagen 
+     * y realiza la asignación de datos correspondientes de un solo.
+     */
     public Comida(String nombre, double costo, double caloria,double racion, String imagen) {
         this.racion = racion;
         super.nombre=nombre;
@@ -32,7 +48,7 @@ public class Comida extends Productos{
     }
     
     
-
+    //Getters y setters
     public String getNombre() {
         return nombre;
     }
@@ -74,6 +90,8 @@ public class Comida extends Productos{
         this.cantVecesPedida = cantVecesPedida;
     }
 
+    
+    //Métodos de los interfaces junto con el toString
     @Override
     public void racion(double racion) {
         this.racion=racion;
