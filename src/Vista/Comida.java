@@ -45,7 +45,7 @@ public class Comida extends javax.swing.JPanel {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblImagen = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(215, 189, 121));
         setLayout(new java.awt.GridBagLayout());
@@ -135,7 +135,7 @@ public class Comida extends javax.swing.JPanel {
 
         jTextField5.setEditable(false);
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 70, -1));
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, -4, 170, 150));
+        jPanel1.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, -4, 170, 150));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -165,23 +165,12 @@ public class Comida extends javax.swing.JPanel {
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         // TODO add your handling code here:
         
-        
-        String temp= (String)jList1.getSelectedValue();
-        
-        int cont=0;
-        String name="";
-        while (temp!= name){
-            name=InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getNombre();
-            cont++;
-        }
-        ImageIcon icon = new ImageIcon(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getImagen());
-        jLabel5.setIcon(icon);
-        
-        
-        jTextField2.setText(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getNombre());
-        jTextField3.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getCantidadLiquido()));
-        jTextField4.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getCaloria()));       
-        jTextField5.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerLista().get(cont).getCosto()));
+        ImageIcon icon = new ImageIcon(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex()).getImagen());
+        lblImagen.setIcon(icon);
+       jTextField2.setText(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getNombre());
+        jTextField3.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getRacion()));
+        jTextField4.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getCaloria()));       
+        jTextField5.setText(Double.toString(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex()).getCosto()));
     }//GEN-LAST:event_jList1MouseClicked
 
 
@@ -192,7 +181,6 @@ public class Comida extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -200,6 +188,7 @@ public class Comida extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel lblImagen;
     // End of variables declaration//GEN-END:variables
 
     public void cargarComida() {
