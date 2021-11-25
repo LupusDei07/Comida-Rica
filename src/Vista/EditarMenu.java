@@ -114,6 +114,7 @@ public class EditarMenu extends javax.swing.JPanel {
         this.setVisible(false);
         InterfazPrincipal.editItem.setVisible(true);
         InterfazPrincipal.contenedor.add(InterfazPrincipal.editItem);
+         InterfazPrincipal.editItem.activarBotones();
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
