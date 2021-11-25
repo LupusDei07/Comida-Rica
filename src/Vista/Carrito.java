@@ -28,20 +28,16 @@ public class Carrito extends javax.swing.JPanel {
     
     public void mostrar(){
         ArrayList<Pedido> lista=InterfazPrincipal.carritoP.getListaPedidos();
-//        System.out.println(InterfazPrincipal.carritoP.getListaPedidos().get(0).toString());
-       
         String matris[][]= new String[lista.size()][2];
         
         
         int c=0;
-
         for (int j = 0; j < lista.size(); j++) {    
-
+            System.out.println(lista.get(j));
 
             matris[c][0]=Integer.toString(lista.get(j).getCantidad());
             matris[c][1]=lista.get(j).getNombreProducto();
-
-   
+            c++;
         }
         
          jTable1.setModel(new javax.swing.table.DefaultTableModel(

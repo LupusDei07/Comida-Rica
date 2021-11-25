@@ -6,7 +6,10 @@
 package Vista;
 
 import Control.GestorProductos;
+import Modelo.Client;
+import Modelo.Peticion;
 import Modelo.Productos;
+import Modelo.TipoAccion;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -281,6 +284,7 @@ public class EditarItemInventario extends javax.swing.JPanel {
         fileName=null;
         index=-1;
         producto=null;
+        lblTitulo.setText("");
         
         ImageIcon icon = new ImageIcon("src/Imagenes/sinImagen.png");
         lblImagen.setIcon(icon);
@@ -424,6 +428,15 @@ public class EditarItemInventario extends javax.swing.JPanel {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
+        Peticion peticionEliminar = new Peticion(TipoAccion.ELIMINAR_PRODUCTO,index);
+        Client conexion = new Client(peticionEliminar);
+        JOptionPane.showMessageDialog(null, "Producto eliminado");
+        limpiarCampos();
+  
+        ocultarErrores();
+        this.setVisible(false);
+        InterfazPrincipal.editMenu.setVisible(true);
+        InterfazPrincipal.contenedor.add(InterfazPrincipal.editMenu);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
 

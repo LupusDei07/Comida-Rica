@@ -10,6 +10,7 @@ import Modelo.Productos;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Comida extends javax.swing.JPanel {
      */
     public Comida() {
         initComponents();
+        jLabel5.setVisible(false);
         cargarComida();
     }
 
@@ -47,8 +49,9 @@ public class Comida extends javax.swing.JPanel {
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(215, 189, 121));
+        setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Regresar");
@@ -80,37 +83,61 @@ public class Comida extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 70;
-        gridBagConstraints.ipady = 127;
+        gridBagConstraints.ipadx = 66;
+        gridBagConstraints.ipady = 298;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(30, 40, 0, 0);
         add(jScrollPane1, gridBagConstraints);
 
-        jPanel1.setBackground(new java.awt.Color(215, 189, 121));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 10, 0, 0);
+        jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cantidad");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+        jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Calorias");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+        jPanel1.add(jLabel3, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Costo");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        jPanel1.add(jLabel4, gridBagConstraints);
 
         jButton3.setText("Agregar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -118,10 +145,24 @@ public class Comida extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 15, 0, 0);
+        jPanel1.add(jButton3, gridBagConstraints);
 
         jTextField2.setEditable(false);
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 70, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 7, 0, 0);
+        jPanel1.add(jTextField2, gridBagConstraints);
 
         jTextField3.setEditable(false);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -129,19 +170,60 @@ public class Comida extends javax.swing.JPanel {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 70, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 7, 0, 0);
+        jPanel1.add(jTextField3, gridBagConstraints);
 
         jTextField4.setEditable(false);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 70, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 7, 0, 0);
+        jPanel1.add(jTextField4, gridBagConstraints);
 
         jTextField5.setEditable(false);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 70, -1));
-        jPanel1.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, -4, 170, 150));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 63;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 7, 0, 0);
+        jPanel1.add(jTextField5, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.ipadx = 170;
+        gridBagConstraints.ipady = 150;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 37, 0, 0);
+        jPanel1.add(lblImagen, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel5.setText("Debe de seleccionar un producto para añadir");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 30, 0, 0);
+        jPanel1.add(jLabel5, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 30, 0, 5);
         add(jPanel1, gridBagConstraints);
@@ -161,40 +243,42 @@ public class Comida extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        System.out.println(jList1.getSelectedIndex());
         
-        
-        
-        Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex());
-        
-        
-        if(InterfazPrincipal.carritoP.getListaPedidos().isEmpty()){
-           
-            Pedido nuevoPedido = new Pedido();
-            nuevoPedido.setNombreProducto(producto.getNombre());
-            nuevoPedido.setCantidad(1);
-            nuevoPedido.setCosto(producto.getCosto());
-            InterfazPrincipal.carritoP.agregar(nuevoPedido);
-
-        }else{
-            for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
-                if(pedido.getNombreProducto().equals(producto.getNombre())){
-
-                    
-                    pedido.setCantidad(pedido.getCantidad()+1);
-                    pedido.setCosto(pedido.getCantidad()*producto.getCosto());
-                }
-            }
-            
-            Pedido nuevoPedido = new Pedido();
-            nuevoPedido.setNombreProducto(producto.getNombre());
-            nuevoPedido.setCantidad(1);
-            nuevoPedido.setCosto(producto.getCosto());
-            InterfazPrincipal.carritoP.agregar(nuevoPedido);
+        if(jList1.getSelectedIndex()==-1){
+            jLabel5.setVisible(true);
         }
-        
+        else{
+            jLabel5.setVisible(false);
+            Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Comida").get(jList1.getSelectedIndex());
             
-      
-        
+            
+            if(InterfazPrincipal.carritoP.getListaPedidos().isEmpty()){
+               
+                Pedido nuevoPedido = new Pedido();
+                nuevoPedido.setNombreProducto(producto.getNombre());
+                nuevoPedido.setCantidad(1);
+                nuevoPedido.setCosto(producto.getCosto());
+                InterfazPrincipal.carritoP.agregar(nuevoPedido);
+    
+            }else{
+                for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
+                    if(pedido.getNombreProducto().equals(producto.getNombre())){
+    
+                        
+                        pedido.setCantidad(pedido.getCantidad()+1);
+                        pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+                    }
+                }
+                
+                Pedido nuevoPedido = new Pedido();
+                nuevoPedido.setNombreProducto(producto.getNombre());
+                nuevoPedido.setCantidad(1);
+                nuevoPedido.setCosto(producto.getCosto());
+                InterfazPrincipal.carritoP.agregar(nuevoPedido);
+            }
+            JOptionPane.showMessageDialog(null, "Producto añadido al carrito");
+        }  
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
@@ -216,6 +300,7 @@ public class Comida extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

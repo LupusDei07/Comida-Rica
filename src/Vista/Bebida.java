@@ -10,6 +10,7 @@ import Modelo.Productos;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Bebida extends javax.swing.JPanel {
      */
     public Bebida() {
         initComponents();
+        jLabel5.setVisible(false);
     }
 
     /**
@@ -47,8 +49,9 @@ public class Bebida extends javax.swing.JPanel {
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(215, 189, 121));
+        setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Regresar");
@@ -59,7 +62,7 @@ public class Bebida extends javax.swing.JPanel {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 10, 10, 0);
         add(jButton1, gridBagConstraints);
@@ -88,16 +91,17 @@ public class Bebida extends javax.swing.JPanel {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 60;
-        gridBagConstraints.ipady = 150;
+        gridBagConstraints.ipadx = 54;
+        gridBagConstraints.ipady = 298;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(20, 40, 0, 0);
         add(jScrollPane1, gridBagConstraints);
 
-        jPanel2.setBackground(new java.awt.Color(215, 189, 121));
+        jPanel2.setBackground(new java.awt.Color(255, 204, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -151,10 +155,15 @@ public class Bebida extends javax.swing.JPanel {
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 108, 62, -1));
         jPanel2.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 160, 200));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel5.setText("Debe de seleccionar un producto para añadir");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, 20));
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 50, 0, 5);
         add(jPanel2, gridBagConstraints);
@@ -170,39 +179,39 @@ public class Bebida extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-
-        Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex());
-        if(InterfazPrincipal.carritoP.getListaPedidos().isEmpty()){
-            
-            Pedido nuevoPedido = new Pedido();
-            nuevoPedido.setNombreProducto(producto.getNombre());
-            nuevoPedido.setCantidad(1);
-            nuevoPedido.setCosto(producto.getCosto());
-            InterfazPrincipal.carritoP.agregar(nuevoPedido);
-
-        }else{
-            for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
-                if(pedido.getNombreProducto().equals(producto.getNombre())){
-
-                   
-                    pedido.setCantidad(pedido.getCantidad()+1);
-                    pedido.setCosto(pedido.getCantidad()*producto.getCosto());
-                }
-            }
-            
-            Pedido nuevoPedido = new Pedido();
-            nuevoPedido.setNombreProducto(producto.getNombre());
-            nuevoPedido.setCantidad(1);
-            nuevoPedido.setCosto(producto.getCosto());
-            InterfazPrincipal.carritoP.agregar(nuevoPedido);
+        
+         if(jList1.getSelectedIndex()==-1){
+            jLabel5.setVisible(true);
         }
+        else{
+            jLabel5.setVisible(false);
+            Productos producto = InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex());
+            if(InterfazPrincipal.carritoP.getListaPedidos().isEmpty()){
 
-        
-       // InterfazPrincipal.carritoP.agregar(InterfazPrincipal.getGestorPro().obtenerListaTipoProducto("Bebida").get(jList1.getSelectedIndex()));
-        
-        
-   
-        
+                Pedido nuevoPedido = new Pedido();
+                nuevoPedido.setNombreProducto(producto.getNombre());
+                nuevoPedido.setCantidad(1);
+                nuevoPedido.setCosto(producto.getCosto());
+                InterfazPrincipal.carritoP.agregar(nuevoPedido);
+
+            }else{
+                for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
+                    if(pedido.getNombreProducto().equals(producto.getNombre())){
+
+
+                        pedido.setCantidad(pedido.getCantidad()+1);
+                        pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+                    }
+                }
+
+                Pedido nuevoPedido = new Pedido();
+                nuevoPedido.setNombreProducto(producto.getNombre());
+                nuevoPedido.setCantidad(1);
+                nuevoPedido.setCosto(producto.getCosto());
+                InterfazPrincipal.carritoP.agregar(nuevoPedido);
+            }
+            JOptionPane.showMessageDialog(null, "Producto añadido al carrito");
+        }   
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -238,6 +247,7 @@ public class Bebida extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
