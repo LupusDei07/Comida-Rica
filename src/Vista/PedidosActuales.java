@@ -55,7 +55,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jList1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 70, 19, 148));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 110, 148));
 
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +78,7 @@ public class PedidosActuales extends javax.swing.JPanel {
         Peticion peticionObtenerCarritos=new Peticion(TipoAccion.OBTENER_CARRITOS,null);
         Client conexion = new Client(peticionObtenerCarritos);
         return (ArrayList<CarritoPedido>)conexion.getRespuestaServer();
+        
     }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -116,16 +117,15 @@ public class PedidosActuales extends javax.swing.JPanel {
     public void fillListBox() {
 
         
-        
-        
-        l= InterfazPrincipal.gestorP.getListaPedidos();
-            for (int i = 0; i < l.size(); i++) {
-                m.addElement(l.get(i));  
-            }
-            jList1.setModel(m);
-        
 
-        
+//        l= InterfazPrincipal.gestorP.getListaPedidos();
+//            for (int i = 0; i < l.size(); i++) {
+//                m.addElement(l.get(i));  
+//            }
+//            jList1.setModel(m);
+//        
+
+       
         
         
         l= actualizarPedidos();

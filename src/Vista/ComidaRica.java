@@ -108,11 +108,11 @@ public class ComidaRica {
         gestor2.actualizarEstadistica(gestor3);
         
         ArrayList<CarritoPedido> lista= gestor2.getListaPedidos();
-        
+        //gestor2.guardarArchivo(gestor2.getListaPedidos());
  
         
-//        gestor2.leerArchivo();
-//        System.out.println(gestor2.getListaPedidos());
+        //gestor2.leerArchivo();
+        //System.out.println(gestor2.getListaPedidos());
 //        System.out.println(lista.size());
 //        System.out.println(lista.get(0));
 //        System.out.println(lista.get(1));

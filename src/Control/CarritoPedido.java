@@ -11,12 +11,13 @@ import Modelo.TipoPedido;
 import Modelo.TipoPedido;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.io.Serializable;
 
 /**
  *
  * @author yumii
  */
-public class CarritoPedido {
+public class CarritoPedido implements Serializable{
     ArrayList<Pedido> listaPedidos;
 
     /**

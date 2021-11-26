@@ -6,12 +6,13 @@
 package Modelo;
 
 import java.util.Objects;
+import java.io.Serializable;
 
 /**
  *
  * @author yumii
  */
-public class Pedido {
+public class Pedido implements Serializable{
     protected int cantidad;
     protected double costo;
     protected String nombreProducto;

@@ -15,12 +15,13 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  *
  * @author yumii
  */
-public class GestorPedidos {
+public class GestorPedidos implements Serializable{
     private ArrayList<CarritoPedido> listaPedidos;
     private int contadorExpress=0, contadorComerAhi=0,contadorParaLlevar=0;
     
@@ -131,6 +132,50 @@ public class GestorPedidos {
         else{
             contadorParaLlevar++;
         }
+
    }
+   
+   /**
+     * Funcionammiento: Lee el archivo binario y carga los datos a la listaProductos.
+     * Entradas: N/A
+     * Salidas: N/A
+     */
+    public void leerArchivo(){
+        File archivo=new File("C:Archivos//CarritosBD.dat");
+        ArrayList<CarritoPedido> lista=new ArrayList<CarritoPedido>();
+        try {
+            FileInputStream fis=new FileInputStream(archivo);
+            ObjectInputStream ois=new ObjectInputStream(fis);
+            lista= (ArrayList<CarritoPedido>) ois.readObject();
+            
+            fis.close();
+            ois.close();
+        } catch (Exception e) {
+            System.out.println("Error a la hora de abrir el archivo");
+            e.printStackTrace();
+        }
+        this.listaPedidos=lista;
+    }
+    
+    /**
+     * Funcionamiento:Guarda en un archivo binario la lista de productos
+     * @param lista 
+     * Salidas: N/A
+     */
+    public void guardarArchivo(ArrayList<CarritoPedido> lista){                                                                     
+        File archivo= new File("C:Archivos//CarritosBD.dat");
+        try {
+            FileOutputStream fos= new FileOutputStream(archivo);
+            ObjectOutputStream oos=new ObjectOutputStream(fos);
+            oos.writeObject(lista);
+            
+            oos.close();
+            fos.close();
+            
+        } catch (Exception e) {
+            System.out.println("Error a la hora de guardar el archivo.");
+            e.printStackTrace();
+        }
+    }
    
 }

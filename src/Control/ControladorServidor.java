@@ -60,8 +60,9 @@ public class ControladorServidor {
                 peticionRecibida.setDatosSalida(listaProductos.buscar(index));
                 break;
             case AGREGAR_CARRITO:
+                listaPedidos.leerArchivo();
                 this.listaPedidos.agregarCarrito((CarritoPedido)peticionRecibida.getDatosEntrada());
-
+                listaPedidos.guardarArchivo(listaPedidos.getListaPedidos());
                 break;         
             case AGREGAR_PRODUCTO_BEBIDA://Agregar producto
                 //Bebida
@@ -117,7 +118,8 @@ public class ControladorServidor {
                 break;
             
             case OBTENER_CARRITOS:
-                peticionRecibida.setDatosSalida(this.listaPedidos);
+                listaPedidos.leerArchivo();
+                peticionRecibida.setDatosSalida(this.listaPedidos.getListaPedidos());
                 break;
         }
         return peticionRecibida;
