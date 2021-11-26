@@ -197,7 +197,7 @@ public class Comida extends javax.swing.JPanel {
                 for(Pedido pedido:InterfazPrincipal.carritoP.getListaPedidos()){
                     if(pedido.getNombreProducto().equals(producto.getNombre())){
                         pedido.setCantidad(pedido.getCantidad()+1);
-                        pedido.setCosto(pedido.getCantidad()*producto.getCosto());
+                        pedido.setCosto(producto.getCosto());
                         encontrar=true;
                     }
                 }

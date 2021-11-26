@@ -43,10 +43,12 @@ public class FormaDeRecibido extends javax.swing.JPanel {
     }
 
     private double calcularPrecio(){
+        
+        
 
         double precioFinal=0.0;
         for(Pedido pedido: InterfazPrincipal.carritoP.getListaPedidos()){
-            precioFinal+=pedido.getCosto();
+            precioFinal+=pedido.getCosto()* pedido.getCantidad();
         }
         InterfazPrincipal.carritoP.setCostoFinal(precioFinal);
         return precioFinal;

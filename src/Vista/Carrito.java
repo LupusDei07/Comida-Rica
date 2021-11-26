@@ -144,6 +144,21 @@ public class Carrito extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
+         int temp= (int)jTable1.getSelectedColumn(); //// si esto da error es get SelectedRow
+        
+         ArrayList<Pedido> lista=InterfazPrincipal.carritoP.getListaPedidos();
+         
+         
+         InterfazPrincipal.carritoP.getListaPedidos().remove(temp);
+         
+         mostrar();
+        
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -165,7 +180,7 @@ public class Carrito extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         
-        int temp= (int)jTable1.getSelectedColumn(); //// si esto da error es get SelectedRow
+        int temp= (int)jTable1.getSelectedRow(); //// si esto da error es get SelectedRow
         
          ArrayList<Pedido> lista=InterfazPrincipal.carritoP.getListaPedidos();
          
